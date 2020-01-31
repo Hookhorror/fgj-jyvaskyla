@@ -9,6 +9,10 @@ public class Movement : MonoBehaviour
     public Camera cam;
     Vector2 movement;
     // Vector2 mousePos;
+    public GameObject nostettava;
+    public float liftspeed = 7f;
+    public Transform carryPosition;
+    private bool lifting;
 
 
     // Update is called once per frame
@@ -18,15 +22,21 @@ public class Movement : MonoBehaviour
         movement.x = Input.GetAxisRaw("Horizontal");
         movement.y = Input.GetAxisRaw("Vertical");
 
+        if (Input.GetButtonDown("Fire1"))
+        {
+            lifting = true;            
+        }
+
+        liftObject();
         // Turning towards mouse position
         // mousePos = cam.ScreenToWorldPoint(Input.mousePosition);
     }
 
     void OnTriggerEnter2D (Collider2D other)
     {
-        Debug.Log("Collision");
-        if(other.gameObject.tag=="nostettava"){
-            Debug.Log("with nostettava");
+        if(other.gameObject.tag=="nostettava")
+        {
+            nostettava = other.gameObject;
         }
     }
     void FixedUpdate()
@@ -37,5 +47,10 @@ public class Movement : MonoBehaviour
         // Vector2 lookDir = mousePos - rb.position;
         // float angle = Mathf.Atan2(lookDir.y, lookDir.x) * Mathf.Rad2Deg - 90f;
         // rb.rotation = angle;
+    }
+
+    public void liftObject(){
+        float step = liftspeed * Time.deltaTime;
+        nostettava.transform.position = Vector2.MoveTowards(nostettava.transform.position, carryPosition.position, step);
     }
 }
