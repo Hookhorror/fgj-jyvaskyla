@@ -22,6 +22,13 @@ public class Movement : MonoBehaviour
         // mousePos = cam.ScreenToWorldPoint(Input.mousePosition);
     }
 
+    void OnTriggerEnter2D (Collider2D other)
+    {
+        Debug.Log("Collision");
+        if(other.gameObject.tag=="nostettava"){
+            Debug.Log("with nostettava");
+        }
+    }
     void FixedUpdate()
     {
         rb.MovePosition(rb.position + movement * moveSpeed * Time.fixedDeltaTime);
