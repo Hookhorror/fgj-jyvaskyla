@@ -14,6 +14,7 @@ public class PlayerController : MonoBehaviour
   private GameObject nostettava;
   private bool playerMoving = false;
   private bool playerLifting = false;
+  private bool playerCarrying = false;
 
   void Awake()
   {
@@ -53,10 +54,8 @@ public class PlayerController : MonoBehaviour
         }
         else
         {
-          playerLifting = false;
-          PartController partController = nostettava.GetComponent<PartController>();
-          partController.throwPart(lastMove);          
-          nostettava = null;
+          playerCarrying = false;
+          throwPart();
         }
       }
 
@@ -64,7 +63,17 @@ public class PlayerController : MonoBehaviour
 
     if (playerLifting)
     {
-      liftObject();
+      if ((nostettava.transform.position - carryPosition.position).sqrMagnitude > 0.01f)
+      {
+        liftObject();
+      }
+      else
+      {
+        playerLifting = false;
+        playerCarrying = true;
+        Debug.Log("Carrying");
+        nostettava.transform.parent = gameObject.transform;
+      }
     }
 
     // Turning towards mouse position
@@ -89,5 +98,20 @@ public class PlayerController : MonoBehaviour
     Debug.Log("Nostaa");
     float step = liftspeed * Time.deltaTime;
     nostettava.transform.position = Vector2.MoveTowards(nostettava.transform.position, carryPosition.position, step);
+  }
+
+  public void throwPart()
+  {    
+    //Luodaan tyhjä gameobject, jolle annetaan carryPositionin positio.
+    GameObject origin = new GameObject();
+    origin.transform.position = carryPosition.position;
+    //Sitten laitetaan heitettävä tämän uuden gameobjectin lapseksi
+    //ja laitetaan heitettävässä animaatiot päälle
+    nostettava.transform.parent = origin.transform;    
+    PartController partController = nostettava.GetComponent<PartController>();
+    partController.throwPart(lastMove);
+
+    playerCarrying = false;
+    nostettava = null;
   }
 }

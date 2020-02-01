@@ -13,7 +13,7 @@ public class PartController : MonoBehaviour
 
     public void throwPart(Vector2 direction)
     {
-        Debug.Log(direction);
+        animator.enabled = true;
         animator.SetFloat("FacingX", direction.x);
         animator.SetFloat("FacingY", direction.y);
         animator.SetTrigger("Throw");
