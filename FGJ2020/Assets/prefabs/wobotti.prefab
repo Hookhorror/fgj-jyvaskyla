@@ -148,8 +148,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aa25d1a8a8fb1bd4a8a94a058ce4f961, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 4
-  rb: {fileID: 3503802843094213641}
+  moveSpeed: 5
   liftspeed: 7
   carryPosition: {fileID: 27414673}
 --- !u!61 &2032666857
