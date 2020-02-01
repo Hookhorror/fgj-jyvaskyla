@@ -9,8 +9,13 @@ public class Vihu : MonoBehaviour
     public double speedScaleWhenSlowed = 0.5;
     public bool isSlowed = false;
     public bool isImmuneToSlow = false;
-    public VihuWaypoint nykyinenKohde;
+    //public VihuWaypoint nykyinenKohde;
 
+    void Awake()
+    {
+
+    }
+        
 
     // Start is called before the first frame update
     void Start()
@@ -36,7 +41,7 @@ public class Vihu : MonoBehaviour
         else
         {
             hp = 0;
-            kuole;
+            kuole();
         }
     }
 
@@ -47,11 +52,11 @@ public class Vihu : MonoBehaviour
     }
 
     // uusi kohde ja mahdollisesti beissin hajotus tai elamien vahennus
-    void paasiKohteeseen(VihuWaypoint kohde)
+    /*void paasiKohteeseen(VihuWaypoint kohde)
     {
         if (kohde.onkoViimeinen)
         {
-            kuole;
+            kuole();
             //TODO vähennä elämiä pelaajalta
         }
         else
@@ -59,7 +64,7 @@ public class Vihu : MonoBehaviour
             nykyinenKohde = kohde.seuraavaKohde;
 
         }
-    }
+    }*/
 
     //is called a fixed number of times per second
     void FixedUpdate ()
