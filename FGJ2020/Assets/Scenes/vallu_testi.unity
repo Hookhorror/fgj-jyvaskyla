@@ -202,6 +202,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 27414673, guid: 992b4637faf81b3428d74b2ef5d70bb3, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.25
+      objectReference: {fileID: 0}
     - target: {fileID: 1118297602, guid: 992b4637faf81b3428d74b2ef5d70bb3, type: 3}
       propertyPath: m_ApplyRootMotion
       value: 0
@@ -266,8 +270,15 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 3503802843094213640, guid: 992b4637faf81b3428d74b2ef5d70bb3, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 992b4637faf81b3428d74b2ef5d70bb3, type: 3}
+--- !u!4 &1553491431 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 27414673, guid: 992b4637faf81b3428d74b2ef5d70bb3,
+    type: 3}
+  m_PrefabInstance: {fileID: 1118297600}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1675367382
 GameObject:
   m_ObjectHideFlags: 0
@@ -351,6 +362,34 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &2063081679 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3503802843094213645, guid: 992b4637faf81b3428d74b2ef5d70bb3,
+    type: 3}
+  m_PrefabInstance: {fileID: 1118297600}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &2063081680 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 1118297602, guid: 992b4637faf81b3428d74b2ef5d70bb3,
+    type: 3}
+  m_PrefabInstance: {fileID: 1118297600}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &2063081682
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2063081679}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 64eab26c4e82cd340a51e5b02e30c0d6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moveSpeed: 5
+  liftspeed: 7
+  carryPosition: {fileID: 1553491431}
+  animator: {fileID: 2063081680}
 --- !u!1 &2128801585 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2740744530831520181, guid: 1ae4a77e27f410b4e8127abf6e10b110,

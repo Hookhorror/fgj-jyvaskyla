@@ -76,6 +76,15 @@ public class PlayerController : MonoBehaviour
             Debug.Log(nostettava);
         }
     }
+
+    void OnTriggerExit2D(Collider2D other)
+    {
+        if (other.gameObject.tag == "nostettava")
+        {
+            nostettava = null;
+        }
+    }
+
     void FixedUpdate()
     {
         rb.MovePosition(rb.position + movement * moveSpeed * Time.fixedDeltaTime);
