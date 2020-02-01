@@ -12,7 +12,7 @@ public class VihuSpawner : MonoBehaviour
     [Tooltip("aika lasketaan frameissa eli 60 sekunnissa")]
     public int valiaikaAallot = 100; // kuinka monen framin valein aallot tulee
 
-    public VihuWaypoint nykyinenKohde;
+    public GameObject nykyinenKohde;
 
 
     // Start is called before the first frame update

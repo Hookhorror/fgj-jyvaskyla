@@ -22,11 +22,15 @@ public class Vihu : MonoBehaviour
     [Tooltip("Pitäisi olla ensimmäinen waypoint")]
 
     public GameObject nykyinenKohde;
+    private int kohdeLaskuri = 0;
+    public int viimeinenKohde = 2;
+
 
     void Awake()
     {
         rb = gameObject.GetComponent<Rigidbody2D>();
-        nykyinenKohde = GameObject.Find("Vihu_Waypoint");
+        nykyinenKohde = GameObject.Find("Vihu_Waypoint_00");
+
         //GameObject.Find("Vihu_Waypoint").transform.position;
     }
         
@@ -62,20 +66,29 @@ public class Vihu : MonoBehaviour
     //tuhoaa vihun ja kutsuu rajahdyksen
     void kuole()
     {
+        speedScale = 0f;
         //TODO: implementoi kuolema ja rajahdys
     }
 
     // uusi kohde ja mahdollisesti beissin hajotus tai elamien vahennus
     void paasiKohteeseen(GameObject kohde)
     {
-        if (kohde.onkoViimeinen)
+        kohdeLaskuri++;
+        Debug.Log("paasikohteeseen" + kohdeLaskuri);
+        //kohde.onkoViimeinen //TODO korvaa
+        if (kohdeLaskuri >= viimeinenKohde)
         {
             kuole();
             //TODO vähennä elämiä pelaajalta
         }
         else
         {
-            nykyinenKohde = kohde.seuraavaKohde;
+            GameObject vanhaKohde = nykyinenKohde;
+            nykyinenKohde = vanhaKohde.haeSeuraavaKohde();
+            //nykyinenKohde = kohde.seuraavaKohde;
+            //nykyinenKohde = GameObject.Find("Vihu_Waypoint_" + kohdeLaskuri.ToString("D2") );
+            
+            
 
         }
     }
@@ -86,9 +99,10 @@ public class Vihu : MonoBehaviour
         //minne pitää mennä
         Vector2 suunta = nykyinenKohde.transform.position;
         suunta = suunta - rb.position;
-        if (suunta.lenght()<= 2)
+        Debug.Log("" + suunta.magnitude);
+        if (suunta.magnitude <= 0.5f)
         {
-            paasiKohteeseen();
+            paasiKohteeseen(nykyinenKohde);
         }
 
         // hidastetaan jos pitää ja vihua voi hidastaa
