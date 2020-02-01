@@ -7,11 +7,13 @@ public class Tower : MonoBehaviour
     public Transform target;
 
     [Header("Attributes")]
-    public float maxHp = 100;
+    public float maxHp = 100f;
     public float hp;
     public float range;
-    public float fireRate = 1f;
+    public float maxFireRate = 1;
+    public float fireRate;
     public float fireCountdown = 0f;
+    public float amountRepaired = 10f;
 
     [Header("Unity Setup Fields")]
     public string enemyTag = "Enemy";
@@ -25,6 +27,7 @@ public class Tower : MonoBehaviour
     void Start()
     {
         InvokeRepeating("UpdateTarget", 0f, 0.5f);
+        Debug.Log("Firerate is: " + fireRate);
     }
 
     void UpdateTarget()
@@ -81,6 +84,8 @@ public class Tower : MonoBehaviour
         }
 
         fireCountdown -= Time.deltaTime;
+
+        UpdateFireRate();
     }
 
     void Shoot()
@@ -98,8 +103,20 @@ public class Tower : MonoBehaviour
 
     void Repair(float hp_)
     {
-        hp += hp_;
+        if ((hp + hp_) > maxHp) hp = maxHp;
+        else hp += hp_;
         Debug.Log("Raised HP by " + hp_ + ", HP is now " + hp + "/" + maxHp);
+    }
+
+
+    void UpdateFireRate()
+    {
+        if (hp < 100f)
+        {
+            fireRate = maxFireRate * (hp / 100) + 0.1f;
+            Debug.Log("Firerate is: " + fireRate);
+        }
+        else fireRate = maxFireRate;
     }
 
     // void OnCOllisionEnter2D(Collision2D collision)
@@ -117,7 +134,8 @@ public class Tower : MonoBehaviour
     {
         if (collision.CompareTag("RepairTools") && hp < maxHp)
         {
-            Repair(5);
+            Repair(amountRepaired);
+            Debug.Log("Firerate is: " + fireRate);
         }
     }
 
