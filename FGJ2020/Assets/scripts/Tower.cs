@@ -4,12 +4,22 @@ using UnityEngine;
 
 public class Tower : MonoBehaviour
 {
-    public int health;
     public Transform target;
-    public float range = 2f;
+
+    [Header("Attributes")]
+    public int health;
+    public float range;
+    public float fireRate = 1f;
+    public float fireCountdown = 0f;
+
+    [Header("Unity Setup Fields")]
     public string enemyTag = "Enemy";
-    public Transform partToRotate;
     public Rigidbody2D rb;
+    public float turnSpeed = 5f;
+
+    public GameObject bulletPrefab;
+    public Transform firePoint;
+    // public Transform partToRotate;
 
     void Start()
     {
@@ -38,6 +48,9 @@ public class Tower : MonoBehaviour
         {
             target = nearestEnemy.transform;
         }
+
+        if (shortestDistance > range)
+            target = null;
     }
 
     void OnDrawGizmosSelected()
@@ -53,29 +66,53 @@ public class Tower : MonoBehaviour
             return;
 
         Vector2 dir = target.position - transform.position;
+        // Vector3 dir = target.position - transform.position;
         Quaternion lookRotation = Quaternion.LookRotation(dir);
+        // Vector3 rotation = Quaternion.Lerp(partToRotate.rotation, lookRotation, Time.deltaTime * turnSpeed).eulerAngles;
+        // partToRotate.rotation = Quaternion.Euler(0f, 0f, rotation.z);
         Vector2 rotation = lookRotation.eulerAngles;
         rb.rotation = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg - 90f;
-    }
 
-    void OnCOllisionEnter2D(Collision2D collision)
-    {
-        AddHp(5);
-
-        if (collision.gameObject.tag == "player")
+        if (fireCountdown <= 0f)
         {
-            AddHp(10);
+            Shoot();
+            fireCountdown = 1f / fireRate;
         }
+
+        fireCountdown -= Time.deltaTime;
     }
 
-
-    void OnTriggerEnter2D(Collider2D collision)
+    void Shoot()
     {
-        if (collision.CompareTag("Player"))
-        {
-            AddHp(5);
-        }
+        // Spawn a bullet
+        GameObject bulletGO = (GameObject)Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
+        Bullet bullet = bulletGO.GetComponent<Bullet>();
+
+
+        if (bullet != null)
+            bullet.Seek(target);
+
+        Debug.Log("Shots fired!");
     }
+
+    // void OnCOllisionEnter2D(Collision2D collision)
+    // {
+    //     AddHp(5);
+
+    //     if (collision.gameObject.tag == "player")
+    //     {
+    //         AddHp(10);
+    //     }
+    // }
+
+
+    // void OnTriggerEnter2D(Collider2D collision)
+    // {
+    //     if (collision.CompareTag("Player"))
+    //     {
+    //         AddHp(5);
+    //     }
+    // }
 
     // void OnTriggerStay2D(Collider2D collider)
     // {
