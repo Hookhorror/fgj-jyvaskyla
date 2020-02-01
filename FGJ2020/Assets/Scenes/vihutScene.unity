@@ -247,6 +247,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2c836847a7cb42041bc9ddc1b8d16a82, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  aaltoja: 5
+  valiaikaVihut: 10
+  valiaikaAallot: 100
 --- !u!1 &769354476
 GameObject:
   m_ObjectHideFlags: 0
@@ -256,6 +259,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 769354477}
+  - component: {fileID: 769354478}
   m_Layer: 0
   m_Name: Vihu_Waypoint
   m_TagString: Untagged
@@ -277,6 +281,20 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &769354478
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 769354476}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9ec2ec06c9a67524a8b395751b3fcdd7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  onkoViimeinen: 1
+  seuraavaKohde: {fileID: 0}
 --- !u!1 &1343185629
 GameObject:
   m_ObjectHideFlags: 0
@@ -289,6 +307,7 @@ GameObject:
   - component: {fileID: 1343185632}
   - component: {fileID: 1343185631}
   - component: {fileID: 1343185630}
+  - component: {fileID: 1343185634}
   m_Layer: 0
   m_Name: vihu_normal_whitebox
   m_TagString: Untagged
@@ -308,6 +327,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de24fa34af0de2c43aa84f292cfa8895, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hp: 100
+  speedScale: 1
+  speedScaleWhenSlowed: 0.5
+  isSlowed: 0
+  isImmuneToSlow: 0
 --- !u!58 &1343185631
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -363,7 +387,7 @@ SpriteRenderer:
   m_SortingLayerID: -434470201
   m_SortingLayer: 1
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 03e6d939fc9c0014e8598d6d1274b047, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 1a401438c1035644c9177646b8be5e52, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -388,3 +412,24 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!50 &1343185634
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1343185629}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0

@@ -4,16 +4,28 @@ using UnityEngine;
 
 public class Vihu : MonoBehaviour
 {
+    [Header("vihun muuttujat")]
     public int hp = 100;
-    public double speedScale = 1.0;
-    public double speedScaleWhenSlowed = 0.5;
-    public bool isSlowed = false;
+    [Header("Nopeudet")]
+    [Tooltip("1.0 on normaali")]
+    public float speedScale = 1.0f;
+    [Tooltip("1.0 on normaali")]
+    public float speedScaleWhenSlowed = 0.5f;
+    [Header("Näille tekee erilaisia vihuja")]
     public bool isImmuneToSlow = false;
+
+    private Rigidbody2D rb;
+    private bool isSlowed = false;
+
+    [Header("Kohde minne vihu on menossa")]
+    [Tooltip("Pitäisi olla ensimmäinen waypoint")]
+
     //public VihuWaypoint nykyinenKohde;
 
     void Awake()
     {
-
+        rb = gameObject.GetComponent<Rigidbody2D>();
+        
     }
         
 

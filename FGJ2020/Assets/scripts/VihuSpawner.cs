@@ -5,10 +5,15 @@ using UnityEngine;
 public class VihuSpawner : MonoBehaviour
 {
     // Aallot määrittää kuinka monessa kasassa vihut tulee
+    [Header("Spawnaamisien muuttujat")]
     public int aaltoja = 5;
+    [Tooltip("aika lasketaan frameissa eli 60 sekunnissa")]
     public int valiaikaVihut = 10; // kuinka monen framin valein vihut tulevat
+    [Tooltip("aika lasketaan frameissa eli 60 sekunnissa")]
     public int valiaikaAallot = 100; // kuinka monen framin valein aallot tulee
-    
+
+    public VihuWaypoint nykyinenKohde;
+
 
     // Start is called before the first frame update
     void Start()
