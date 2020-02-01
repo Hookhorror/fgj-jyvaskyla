@@ -10,8 +10,10 @@ public class PlayerController : MonoBehaviour
   public Animator animator;
   private Rigidbody2D rb;
   private Vector2 movement;
+  private Vector2 lastMove;
   private GameObject nostettava;
-  private bool lifting = false;
+  private bool playerMoving = false;
+  private bool playerLifting = false;
 
   void Awake()
   {
@@ -21,30 +23,39 @@ public class PlayerController : MonoBehaviour
   // Update is called once per frame
   void Update()
   {
+    playerMoving = false;
+
     // x and y movement
     movement.x = Input.GetAxisRaw("Horizontal");
-    movement.y = Input.GetAxisRaw("Vertical");
+    movement.y = Input.GetAxisRaw("Vertical");    
 
-    animator.SetFloat("Horizontal", movement.x);
-    animator.SetFloat("Vertical", movement.y);
-    animator.SetFloat("Speed", movement.sqrMagnitude);
+    if (movement.x != 0 || movement.y != 0){
+      playerMoving = true;
+      lastMove = new Vector2(movement.x, movement.y);
+    }
+
+    animator.SetFloat("MoveX", movement.x);
+    animator.SetFloat("MoveY", movement.y);
+    animator.SetBool("PlayerMoving", playerMoving);
+    animator.SetFloat("LastMoveX", lastMove.x);
+    animator.SetFloat("LastMoveY", lastMove.y);
 
     if (Input.GetButtonDown("Fire1"))
     {
-      if (!lifting)
+      if (!playerLifting)
       {
         {
-          lifting = true;
+          playerLifting = true;
         }
       }
       else
       {
-        lifting = false;
+        playerLifting = false;
       }
 
     }
 
-    if (lifting)
+    if (playerLifting)
     {
       liftObject();
     }
@@ -64,11 +75,6 @@ public class PlayerController : MonoBehaviour
   void FixedUpdate()
   {
     rb.MovePosition(rb.position + movement * moveSpeed * Time.fixedDeltaTime);
-
-    // Turning
-    // Vector2 lookDir = mousePos - rb.position;
-    // float angle = Mathf.Atan2(lookDir.y, lookDir.x) * Mathf.Rad2Deg - 90f;
-    // rb.rotation = angle;
   }
 
   public void liftObject()
