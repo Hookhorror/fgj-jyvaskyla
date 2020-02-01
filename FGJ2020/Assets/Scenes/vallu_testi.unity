@@ -121,6 +121,24 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!4 &87924757 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 6278686764023979195, guid: 992b4637faf81b3428d74b2ef5d70bb3,
+    type: 3}
+  m_PrefabInstance: {fileID: 1118297600}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &620453614 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 946310331182408333, guid: 992b4637faf81b3428d74b2ef5d70bb3,
+    type: 3}
+  m_PrefabInstance: {fileID: 1118297600}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &624093204 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 3540147164288716493, guid: 992b4637faf81b3428d74b2ef5d70bb3,
+    type: 3}
+  m_PrefabInstance: {fileID: 1118297600}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &685481979
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -195,6 +213,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1ae4a77e27f410b4e8127abf6e10b110, type: 3}
+--- !u!4 &1043014934 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 3727228727301167387, guid: 992b4637faf81b3428d74b2ef5d70bb3,
+    type: 3}
+  m_PrefabInstance: {fileID: 1118297600}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1118297600
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -389,6 +413,10 @@ MonoBehaviour:
   moveSpeed: 5
   liftspeed: 7
   carryPosition: {fileID: 1553491431}
+  throwpointUp: {fileID: 620453614}
+  throwpointDown: {fileID: 87924757}
+  throwpointLeft: {fileID: 624093204}
+  throwpointRight: {fileID: 1043014934}
   animator: {fileID: 2063081680}
 --- !u!1 &2128801585 stripped
 GameObject:
@@ -455,3 +483,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 80b13775cee13a943ba9ca93c5739e2a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  throwspeed: 15

@@ -1,12 +1,14 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
     public float moveSpeed = 5f;
     public float liftspeed = 7f;
     public Transform carryPosition;
+    public Transform throwpointUp;
+    public Transform throwpointDown;
+    public Transform throwpointLeft;
+    public Transform throwpointRight;
     public Animator animator;
     private Rigidbody2D rb;
     private Vector2 movement;
@@ -14,6 +16,7 @@ public class PlayerController : MonoBehaviour
     private GameObject nostettava;
     private bool playerMoving = false;
     private bool playerLifting = false;
+
 
     void Awake()
     {
@@ -54,6 +57,7 @@ public class PlayerController : MonoBehaviour
                 else
                 {
                     playerLifting = false;
+                    throwPart();
                 }
             }
 
@@ -73,7 +77,6 @@ public class PlayerController : MonoBehaviour
         if (other.gameObject.tag == "nostettava")
         {
             nostettava = other.gameObject;
-            Debug.Log(nostettava);
         }
     }
 
@@ -94,5 +97,28 @@ public class PlayerController : MonoBehaviour
     {
         float step = liftspeed * Time.deltaTime;
         nostettava.transform.position = Vector2.MoveTowards(nostettava.transform.position, carryPosition.position, step);
+    }
+
+    public void throwPart()
+    {        
+        PartController pc = nostettava.gameObject.GetComponent<PartController>();
+        Debug.Log(lastMove);
+        if (lastMove.x == 0 && lastMove.y == 1)
+        {
+            pc.throwPart(throwpointUp);
+        }
+        if (lastMove.x == 0 && lastMove.y == -1)
+        {
+            pc.throwPart(throwpointDown);
+        }
+        if (lastMove.x == -1 && lastMove.y == 0)
+        {
+            pc.throwPart(throwpointLeft);
+        }
+        if (lastMove.x == 1 && lastMove.y == 0)
+        {
+            pc.throwPart(throwpointRight);
+        }
+        nostettava = null;
     }
 }
