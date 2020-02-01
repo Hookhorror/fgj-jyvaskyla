@@ -27,9 +27,10 @@ public class PlayerController : MonoBehaviour
 
     // x and y movement
     movement.x = Input.GetAxisRaw("Horizontal");
-    movement.y = Input.GetAxisRaw("Vertical");    
+    movement.y = Input.GetAxisRaw("Vertical");
 
-    if (movement.x != 0 || movement.y != 0){
+    if (movement.x != 0 || movement.y != 0)
+    {
       playerMoving = true;
       lastMove = new Vector2(movement.x, movement.y);
     }
@@ -42,15 +43,21 @@ public class PlayerController : MonoBehaviour
 
     if (Input.GetButtonDown("Fire1"))
     {
-      if (!playerLifting)
+      if (nostettava != null)
       {
+        Debug.Log("nostettava != null");
+        if (!playerLifting)
         {
+          Debug.Log("lift");
           playerLifting = true;
         }
-      }
-      else
-      {
-        playerLifting = false;
+        else
+        {
+          playerLifting = false;
+          PartController partController = nostettava.GetComponent<PartController>();
+          partController.throwPart(lastMove);          
+          nostettava = null;
+        }
       }
 
     }
@@ -68,8 +75,8 @@ public class PlayerController : MonoBehaviour
   {
     if (other.gameObject.tag == "nostettava")
     {
+      Debug.Log("nostettava");
       nostettava = other.gameObject;
-      Debug.Log(nostettava);
     }
   }
   void FixedUpdate()
@@ -79,6 +86,7 @@ public class PlayerController : MonoBehaviour
 
   public void liftObject()
   {
+    Debug.Log("Nostaa");
     float step = liftspeed * Time.deltaTime;
     nostettava.transform.position = Vector2.MoveTowards(nostettava.transform.position, carryPosition.position, step);
   }
