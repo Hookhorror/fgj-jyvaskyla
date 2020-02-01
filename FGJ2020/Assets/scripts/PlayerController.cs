@@ -7,6 +7,10 @@ public class PlayerController : MonoBehaviour
     public float moveSpeed = 5f;
     public float liftspeed = 7f;
     public Transform carryPosition;
+    public Transform throwpointUp;
+    public Transform throwpointDown;
+    public Transform throwpointLeft;
+    public Transform throwpointRight;
     public Animator animator;
     private Rigidbody2D rb;
     private Vector2 movement;
@@ -14,6 +18,7 @@ public class PlayerController : MonoBehaviour
     private GameObject nostettava;
     private bool playerMoving = false;
     private bool playerLifting = false;
+
 
     void Awake()
     {
@@ -54,6 +59,7 @@ public class PlayerController : MonoBehaviour
                 else
                 {
                     playerLifting = false;
+                    throwPart();
                 }
             }
 
@@ -94,5 +100,28 @@ public class PlayerController : MonoBehaviour
     {
         float step = liftspeed * Time.deltaTime;
         nostettava.transform.position = Vector2.MoveTowards(nostettava.transform.position, carryPosition.position, step);
+    }
+
+    public void throwPart()
+    {                
+        if (lastMove.x == 0 && lastMove.y == 0)
+        {
+
+        }
+        if (lastMove.x == 0 && lastMove.y == 0)
+        {
+            
+        }
+        if (lastMove.x == 0 && lastMove.y == 0)
+        {
+            
+        }
+        if (lastMove.x == 0 && lastMove.y == 0)
+        {
+            
+        }
+        Debug.Log("Heitä");
+        PartController pc = nostettava.gameObject.GetComponent<PartController>();
+        pc.throwPart(throwpointLeft);
     }
 }
