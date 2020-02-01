@@ -5,7 +5,7 @@ using UnityEngine;
 public class Vihu : MonoBehaviour
 {
     [Header("vihun muuttujat")]
-    public int hp = 100;
+    private int hp = 100;
     public int maxhp = 100;
     [Header("Nopeudet")]
     [Tooltip("1.0 on normaali")]
@@ -40,9 +40,10 @@ public class Vihu : MonoBehaviour
     [Tooltip("aika frameissa eli 1=16.6ms")]
     public int hitCoolDownFrames = 15;
 
-
+    // objekti luodaan
     void Awake()
     {
+        hp = maxhp;
         rb = gameObject.GetComponent<Rigidbody2D>();
         nykyinenKohde = GameObject.Find("Vihu_Waypoint_00");
 
