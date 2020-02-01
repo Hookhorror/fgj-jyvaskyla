@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
@@ -79,7 +77,6 @@ public class PlayerController : MonoBehaviour
         if (other.gameObject.tag == "nostettava")
         {
             nostettava = other.gameObject;
-            Debug.Log(nostettava);
         }
     }
 
@@ -103,25 +100,25 @@ public class PlayerController : MonoBehaviour
     }
 
     public void throwPart()
-    {                
-        if (lastMove.x == 0 && lastMove.y == 0)
-        {
-
-        }
-        if (lastMove.x == 0 && lastMove.y == 0)
-        {
-            
-        }
-        if (lastMove.x == 0 && lastMove.y == 0)
-        {
-            
-        }
-        if (lastMove.x == 0 && lastMove.y == 0)
-        {
-            
-        }
-        Debug.Log("Heitä");
+    {        
         PartController pc = nostettava.gameObject.GetComponent<PartController>();
-        pc.throwPart(throwpointLeft);
+        Debug.Log(lastMove);
+        if (lastMove.x == 0 && lastMove.y == 1)
+        {
+            pc.throwPart(throwpointUp);
+        }
+        if (lastMove.x == 0 && lastMove.y == -1)
+        {
+            pc.throwPart(throwpointDown);
+        }
+        if (lastMove.x == -1 && lastMove.y == 0)
+        {
+            pc.throwPart(throwpointLeft);
+        }
+        if (lastMove.x == 1 && lastMove.y == 0)
+        {
+            pc.throwPart(throwpointRight);
+        }
+        nostettava = null;
     }
 }

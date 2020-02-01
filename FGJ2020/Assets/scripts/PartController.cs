@@ -6,32 +6,29 @@ public class PartController : MonoBehaviour
 {
 
     public float throwspeed = 5f;
-    private Transform throwTarget;
-
+    private Vector2 throwTarget;
+    private bool isThrowing = false;
 
     public void throwPart(Transform target)
-    {
-        GameObject empty = new GameObject();
-        empty.transform.position = target.position;
-        throwTarget = empty.transform;
-        Destroy(empty);
+    {                
+        throwTarget = new Vector2(target.transform.position.x, target.transform.position.y);
+        Debug.Log(throwTarget);
+        isThrowing = true; 
     }
 
     void Update()
     {
-        if (throwTarget != null)
+        if (isThrowing)
         {
+            Debug.Log("Heittää kokoajan");
             float step = throwspeed * Time.deltaTime;
-            gameObject.transform.position = Vector2.MoveTowards(gameObject.transform.position, throwTarget.position, step);
+            gameObject.transform.position = Vector2.MoveTowards(gameObject.transform.position, throwTarget, step);
 
-            if ((gameObject.transform.position - throwTarget.position).sqrMagnitude < 0.01f)
-            {
-                throwTarget = null;
+            if (((Vector2)gameObject.transform.position - throwTarget).sqrMagnitude < 0.01f)
+            {                
+                isThrowing = false;
             }
         }
-
-
-
     }
 
 }
