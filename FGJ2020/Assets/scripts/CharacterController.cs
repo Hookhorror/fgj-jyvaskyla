@@ -2,14 +2,13 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Movement : MonoBehaviour
+public class CharacterController : MonoBehaviour
 {
     public float moveSpeed = 5f;
     public Rigidbody2D rb;
-    public Camera cam;
-    Vector2 movement;
+    private Vector2 movement;
     // Vector2 mousePos;
-    public GameObject nostettava;
+    private GameObject nostettava;
     public float liftspeed = 7f;
     public Transform carryPosition;
     private bool lifting;
@@ -22,12 +21,21 @@ public class Movement : MonoBehaviour
         movement.x = Input.GetAxisRaw("Horizontal");
         movement.y = Input.GetAxisRaw("Vertical");
 
-        if (Input.GetButtonDown("Fire1"))
+        if (Input.GetButtonDown("Fire1") && nostettava)
         {
             lifting = true;            
+        }       
+
+        if (Input.GetButtonDown("Fire1") && lifting){
+            nostettava.PartController.throw(direction);
+            nostettava = null;
+            lifting = false;
         }
 
-        liftObject();
+        if (lifting){
+            liftObject();
+        }
+        
         // Turning towards mouse position
         // mousePos = cam.ScreenToWorldPoint(Input.mousePosition);
     }
@@ -36,7 +44,7 @@ public class Movement : MonoBehaviour
     {
         if(other.gameObject.tag=="nostettava")
         {
-            nostettava = other.gameObject;
+            nostettava = other.gameObject;            
         }
     }
     void FixedUpdate()
