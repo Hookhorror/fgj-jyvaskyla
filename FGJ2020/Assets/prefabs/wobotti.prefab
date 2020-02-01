@@ -43,6 +43,7 @@ GameObject:
   - component: {fileID: 3503802843094213641}
   - component: {fileID: 3503802843094213640}
   - component: {fileID: 2032666857}
+  - component: {fileID: 1118297602}
   m_Layer: 0
   m_Name: wobotti
   m_TagString: Untagged
@@ -104,7 +105,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 1d7e9862b2238844697a704f748b91f0, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 5859a36e211d0e444a0cf98d4677b805, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -135,7 +136,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!114 &3503802843094213640
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -151,6 +152,7 @@ MonoBehaviour:
   moveSpeed: 5
   liftspeed: 7
   carryPosition: {fileID: 27414673}
+  animator: {fileID: 1118297602}
 --- !u!61 &2032666857
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -177,3 +179,22 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.76, y: 0.77}
   m_EdgeRadius: 0
+--- !u!95 &1118297602
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3503802843094213645}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 731c8946e5dc9d84b8f9c5daa58a103e, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0

@@ -14,6 +14,7 @@ public class PlayerController : MonoBehaviour
   private GameObject nostettava;
   private bool playerMoving = false;
   private bool playerLifting = false;
+  private bool playerCarrying = false;
 
   void Awake()
   {
@@ -27,9 +28,10 @@ public class PlayerController : MonoBehaviour
 
     // x and y movement
     movement.x = Input.GetAxisRaw("Horizontal");
-    movement.y = Input.GetAxisRaw("Vertical");    
+    movement.y = Input.GetAxisRaw("Vertical");
 
-    if (movement.x != 0 || movement.y != 0){
+    if (movement.x != 0 || movement.y != 0)
+    {
       playerMoving = true;
       lastMove = new Vector2(movement.x, movement.y);
     }
@@ -42,22 +44,36 @@ public class PlayerController : MonoBehaviour
 
     if (Input.GetButtonDown("Fire1"))
     {
-      if (!playerLifting)
+      if (nostettava != null)
       {
+        Debug.Log("nostettava != null");
+        if (!playerLifting)
         {
+          Debug.Log("lift");
           playerLifting = true;
         }
-      }
-      else
-      {
-        playerLifting = false;
+        else
+        {
+          playerCarrying = false;
+          throwPart();
+        }
       }
 
     }
 
     if (playerLifting)
     {
-      liftObject();
+      if ((nostettava.transform.position - carryPosition.position).sqrMagnitude > 0.01f)
+      {
+        liftObject();
+      }
+      else
+      {
+        playerLifting = false;
+        playerCarrying = true;
+        Debug.Log("Carrying");
+        nostettava.transform.parent = gameObject.transform;
+      }
     }
 
     // Turning towards mouse position
@@ -68,8 +84,8 @@ public class PlayerController : MonoBehaviour
   {
     if (other.gameObject.tag == "nostettava")
     {
+      Debug.Log("nostettava");
       nostettava = other.gameObject;
-      Debug.Log(nostettava);
     }
   }
   void FixedUpdate()
@@ -79,7 +95,23 @@ public class PlayerController : MonoBehaviour
 
   public void liftObject()
   {
+    Debug.Log("Nostaa");
     float step = liftspeed * Time.deltaTime;
     nostettava.transform.position = Vector2.MoveTowards(nostettava.transform.position, carryPosition.position, step);
+  }
+
+  public void throwPart()
+  {    
+    //Luodaan tyhjä gameobject, jolle annetaan carryPositionin positio.
+    GameObject origin = new GameObject();
+    origin.transform.position = carryPosition.position;
+    //Sitten laitetaan heitettävä tämän uuden gameobjectin lapseksi
+    //ja laitetaan heitettävässä animaatiot päälle
+    nostettava.transform.parent = origin.transform;    
+    PartController partController = nostettava.GetComponent<PartController>();
+    partController.throwPart(lastMove);
+
+    playerCarrying = false;
+    nostettava = null;
   }
 }
