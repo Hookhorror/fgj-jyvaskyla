@@ -40,6 +40,8 @@ public class Vihu : MonoBehaviour
     [Tooltip("aika frameissa eli 1=16.6ms")]
     public int hitCoolDownFrames = 15;
 
+    public GameObject rajahdys;
+
     // objekti luodaan
     void Awake()
     {
@@ -94,20 +96,20 @@ public class Vihu : MonoBehaviour
     void kuole()
     {
         speedScale = 0f;
+        Instantiate(rajahdys, rb.position, new Quaternion());
+        Destroy(this);
         //TODO: implementoi kuolema ja rajahdys
     }
 
     // uusi kohde ja mahdollisesti beissin hajotus tai elamien vahennus
     void paasiKohteeseen(GameObject kohde)
     {
-        damage(1);
-        //test
 
         kohdeLaskuri++;
-        Debug.Log("paasikohteeseen" + kohdeLaskuri);
         //kohde.onkoViimeinen //TODO korvaa
         if (kohdeLaskuri >= viimeinenKohde)
         {
+
             kuole();
             //TODO vähennä elämiä pelaajalta
         }
@@ -147,7 +149,6 @@ public class Vihu : MonoBehaviour
         //minne pitää mennä
         Vector2 suunta = nykyinenKohde.transform.position;
         suunta = suunta - rb.position;
-        Debug.Log("" + suunta.magnitude);
         if (suunta.magnitude <= 0.5f)
         {
             paasiKohteeseen(nykyinenKohde);
