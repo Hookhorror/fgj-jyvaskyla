@@ -9,6 +9,7 @@ public class Vihu : MonoBehaviour
     [Header("Nopeudet")]
     [Tooltip("1.0 on normaali")]
     public float speedScale = 1.0f;
+    private float moveSpeed = 2f;
     [Tooltip("1.0 on normaali")]
     public float speedScaleWhenSlowed = 0.5f;
     [Header("Näille tekee erilaisia vihuja")]
@@ -20,12 +21,13 @@ public class Vihu : MonoBehaviour
     [Header("Kohde minne vihu on menossa")]
     [Tooltip("Pitäisi olla ensimmäinen waypoint")]
 
-    //public VihuWaypoint nykyinenKohde;
+    public GameObject nykyinenKohde;
 
     void Awake()
     {
         rb = gameObject.GetComponent<Rigidbody2D>();
-        
+        nykyinenKohde = GameObject.Find("Vihu_Waypoint");
+        //GameObject.Find("Vihu_Waypoint").transform.position;
     }
         
 
@@ -64,7 +66,7 @@ public class Vihu : MonoBehaviour
     }
 
     // uusi kohde ja mahdollisesti beissin hajotus tai elamien vahennus
-    /*void paasiKohteeseen(VihuWaypoint kohde)
+    void paasiKohteeseen(GameObject kohde)
     {
         if (kohde.onkoViimeinen)
         {
@@ -76,11 +78,27 @@ public class Vihu : MonoBehaviour
             nykyinenKohde = kohde.seuraavaKohde;
 
         }
-    }*/
+    }
 
     //is called a fixed number of times per second
     void FixedUpdate ()
     {
+        //minne pitää mennä
+        Vector2 suunta = nykyinenKohde.transform.position;
+        suunta = suunta - rb.position;
+        if (suunta.lenght()<= 2)
+        {
+            paasiKohteeseen();
+        }
+
+        // hidastetaan jos pitää ja vihua voi hidastaa
+        float kerroin = 1.0f;
+        if (!isImmuneToSlow & isSlowed)
+        {
+            kerroin = speedScaleWhenSlowed;
+        }
+
+        rb.MovePosition(rb.position + suunta.normalized * kerroin * moveSpeed * Time.fixedDeltaTime);
         //TODO liikuta vihua kohti waypointtia. A* vois toimia, mutta pitää tehdä kenttä sille
     }
 }
