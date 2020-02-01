@@ -11,4 +11,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/TowerSample.unity
     guid: a4f3b8fa9c1bdf5daabef6df70ae6d4e
+  - enabled: 1
+    path: Assets/Scenes/RepairkitTest.unity
+    guid: e5484a888f538b89f99b2975a26dd3bb
   m_configObjects: {}

@@ -7,7 +7,8 @@ public class Tower : MonoBehaviour
     public Transform target;
 
     [Header("Attributes")]
-    public int health;
+    public float maxHp = 100;
+    public float hp;
     public float range;
     public float fireRate = 1f;
     public float fireCountdown = 0f;
@@ -95,6 +96,12 @@ public class Tower : MonoBehaviour
         Debug.Log("Shots fired!");
     }
 
+    void Repair(float hp_)
+    {
+        hp += hp_;
+        Debug.Log("Raised HP by " + hp_ + ", HP is now " + hp + "/" + maxHp);
+    }
+
     // void OnCOllisionEnter2D(Collision2D collision)
     // {
     //     AddHp(5);
@@ -106,23 +113,16 @@ public class Tower : MonoBehaviour
     // }
 
 
-    // void OnTriggerEnter2D(Collider2D collision)
-    // {
-    //     if (collision.CompareTag("Player"))
-    //     {
-    //         AddHp(5);
-    //     }
-    // }
+    void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.CompareTag("RepairTools") && hp < maxHp)
+        {
+            Repair(5);
+        }
+    }
 
     // void OnTriggerStay2D(Collider2D collider)
     // {
     //     AddHp(1);
     // }
-
-
-    private void AddHp(int hp)
-    {
-        health += hp;
-        Debug.Log(health);
-    }
 }
