@@ -48,3 +48,6 @@ TagManager:
   - name: Vihut
     uniqueID: 3860497095
     locked: 0
+  - name: Background
+    uniqueID: 14527171
+    locked: 0

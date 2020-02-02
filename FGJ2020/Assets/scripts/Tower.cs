@@ -132,7 +132,7 @@ public class Tower : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.CompareTag("RepairTools") && hp < maxHp)
+        if (collision.CompareTag("nostettava") && hp < maxHp)
         {
             Repair(amountRepaired);
             Debug.Log("Firerate is: " + fireRate);
