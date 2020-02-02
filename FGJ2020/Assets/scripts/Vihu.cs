@@ -97,13 +97,13 @@ public class Vihu : MonoBehaviour
             //hp:ta on enemman kuin mita on tulossa, niin otetaan vahinkoa
             hp = hp - maara;
             wasHit = hitCoolDownFrames;
-            if (hp/maxhp <= strongToMedium)
+            if (((hp + 0.0) /(maxhp + 0.0)) >= strongToMedium)
             {
-                this.GetComponent<SpriteRenderer>().sprite = Vihu_Weak_hit;
+                this.GetComponent<SpriteRenderer>().sprite = Vihu_Strong_hit;
             }
             else
             {
-                this.GetComponent<SpriteRenderer>().sprite = Vihu_Strong_hit;
+                this.GetComponent<SpriteRenderer>().sprite = Vihu_Weak_hit;
 
             }
 
@@ -154,7 +154,7 @@ public class Vihu : MonoBehaviour
         }
         else if (wasHit ==0)
         {
-            if (hp/maxhp >= strongToMedium)
+            if (((hp + 0.0) / (maxhp + 0.0)) >= strongToMedium)
             {
                 this.GetComponent<SpriteRenderer>().sprite = Vihu_Strong_normal;
 
