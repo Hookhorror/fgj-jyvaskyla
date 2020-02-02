@@ -22,6 +22,7 @@ public class VihuSpawner : MonoBehaviour
     private int seuraavaanSpawniin = 0;
     private int aallonLoppuun;
     private int seuraavaanAaltoon;
+    public GameObject[] listaKohteita;
 
 
     void Awake()
