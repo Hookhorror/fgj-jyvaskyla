@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using System.Collections.Generic;
 
 public class PlayerController : MonoBehaviour
 {
@@ -16,6 +17,7 @@ public class PlayerController : MonoBehaviour
     private GameObject nostettava;
     private bool playerMoving = false;
     private bool playerLifting = false;
+    public List<GameObject> nostoJono = new List<GameObject>();
 
 
     void Awake()
@@ -77,6 +79,8 @@ public class PlayerController : MonoBehaviour
         if (other.gameObject.tag == "nostettava")
         {
             nostettava = other.gameObject;
+            nostoJono.Add(other.gameObject);
+            Debug.Log(nostoJono);
         }
     }
 
@@ -85,6 +89,8 @@ public class PlayerController : MonoBehaviour
         if (other.gameObject.tag == "nostettava")
         {
             nostettava = null;
+            nostoJono.Remove(other.gameObject);
+            Debug.Log(nostoJono);
         }
     }
 

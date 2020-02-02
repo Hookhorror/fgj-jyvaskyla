@@ -12,7 +12,7 @@ public class PartController : MonoBehaviour
     public void throwPart(Transform target)
     {                
         throwTarget = new Vector2(target.transform.position.x, target.transform.position.y);
-        Debug.Log(throwTarget);
+        //Debug.Log(throwTarget);
         isThrowing = true; 
     }
 
@@ -20,7 +20,7 @@ public class PartController : MonoBehaviour
     {
         if (isThrowing)
         {
-            Debug.Log("Heittää kokoajan");
+            //Debug.Log("Heittää kokoajan");
             float step = throwspeed * Time.deltaTime;
             gameObject.transform.position = Vector2.MoveTowards(gameObject.transform.position, throwTarget, step);
 
