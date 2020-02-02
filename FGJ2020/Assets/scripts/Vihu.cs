@@ -41,6 +41,7 @@ public class Vihu : MonoBehaviour
     public GameObject rajahdys;
 
     private VihuWaypoint vihuWaypointScript;
+    public AudioSource hitmarker;
 
     // objekti luodaan
     void Awake()
@@ -55,6 +56,7 @@ public class Vihu : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        hitmarker = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
