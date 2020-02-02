@@ -132,6 +132,7 @@ MonoBehaviour:
   hitCoolDownFrames: 15
   rajahdys: {fileID: 2537836726447738906, guid: 4908e6bcb40be2048995d79a9d900a41,
     type: 3}
+  damageaPerOsuma: 10
   hitmarker: {fileID: 0}
 --- !u!50 &6294226949548888826
 Rigidbody2D:
@@ -143,16 +144,16 @@ Rigidbody2D:
   m_GameObject: {fileID: 6294226949548888773}
   m_BodyType: 0
   m_Simulated: 1
-  m_UseFullKinematicContacts: 0
+  m_UseFullKinematicContacts: 1
   m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDrag: 1
+  m_Mass: 10
+  m_LinearDrag: 2
   m_AngularDrag: 0.05
   m_GravityScale: 0
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 0
 --- !u!82 &1394922132727227170
 AudioSource:

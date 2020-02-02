@@ -8,6 +8,7 @@ public class Bullet : MonoBehaviour
     private Transform target;
     public float speed = 70f;
     public GameObject impactEffect;
+    private Vihu vihuScript;
 
     public void Seek(Transform _target)
     {
@@ -28,6 +29,7 @@ public class Bullet : MonoBehaviour
 
         if (dir.magnitude <= distanceThisFrame)
         {
+            target.GetComponent<Vihu>().damage(5);
             HitTarget();
             return;
         }
