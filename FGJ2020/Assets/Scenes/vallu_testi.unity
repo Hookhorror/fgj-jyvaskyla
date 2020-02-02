@@ -298,6 +298,11 @@ PrefabInstance:
       propertyPath: m_ApplyRootMotion
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 946310331182408333, guid: 992b4637faf81b3428d74b2ef5d70bb3,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.2
+      objectReference: {fileID: 0}
     - target: {fileID: 3503802843094213645, guid: 992b4637faf81b3428d74b2ef5d70bb3,
         type: 3}
       propertyPath: m_Name
@@ -357,6 +362,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6278686764023979195, guid: 992b4637faf81b3428d74b2ef5d70bb3,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -1.2
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 3503802843094213640, guid: 992b4637faf81b3428d74b2ef5d70bb3, type: 3}
@@ -475,7 +485,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 5
-  liftspeed: 7
+  liftspeed: 8
+  throwSpeed: 15
   carryPosition: {fileID: 1553491431}
   throwpointUp: {fileID: 620453614}
   throwpointDown: {fileID: 87924757}

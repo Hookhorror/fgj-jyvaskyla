@@ -5,6 +5,7 @@ public class PlayerController : MonoBehaviour
 {
     public float moveSpeed = 5f;
     public float liftspeed = 7f;
+    public float throwSpeed = 15f;
     public Transform carryPosition;
     public Transform throwpointUp;
     public Transform throwpointDown;
@@ -14,7 +15,7 @@ public class PlayerController : MonoBehaviour
     private Rigidbody2D rb;
     private Vector2 movement;
     private Vector2 lastMove;
-    private GameObject nostettava;
+    private GameObject nostettuPala;
     private bool playerMoving = false;
     private bool playerLifting = false;
     public List<GameObject> nostoJono = new List<GameObject>();
@@ -48,17 +49,18 @@ public class PlayerController : MonoBehaviour
 
         if (Input.GetButtonDown("Fire1"))
         {
-            if (nostettava != null)
+
+            if (nostoJono.Count > 0) // nostettava != null
             {
                 if (!playerLifting)
                 {
                     {
                         playerLifting = true;
+                        nostettuPala = nostoJono[0];
                     }
                 }
                 else
                 {
-                    playerLifting = false;
                     throwPart();
                 }
             }
@@ -78,9 +80,8 @@ public class PlayerController : MonoBehaviour
     {
         if (other.gameObject.tag == "nostettava")
         {
-            nostettava = other.gameObject;
+            //nostettava = other.gameObject;
             nostoJono.Add(other.gameObject);
-            Debug.Log(nostoJono);
         }
     }
 
@@ -88,9 +89,7 @@ public class PlayerController : MonoBehaviour
     {
         if (other.gameObject.tag == "nostettava")
         {
-            nostettava = null;
             nostoJono.Remove(other.gameObject);
-            Debug.Log(nostoJono);
         }
     }
 
@@ -102,29 +101,31 @@ public class PlayerController : MonoBehaviour
     public void liftObject()
     {
         float step = liftspeed * Time.deltaTime;
-        nostettava.transform.position = Vector2.MoveTowards(nostettava.transform.position, carryPosition.position, step);
+        nostettuPala.transform.position = Vector2.MoveTowards(nostettuPala.transform.position, carryPosition.position, step);
+        
     }
 
     public void throwPart()
     {        
-        PartController pc = nostettava.gameObject.GetComponent<PartController>();
-        Debug.Log(lastMove);
+        PartController pc = nostettuPala.gameObject.GetComponent<PartController>();
+        nostoJono.Remove(nostettuPala);
+        playerLifting = false;
+        //Debug.Log(lastMove);
         if (lastMove.x == 0 && lastMove.y == 1)
         {
-            pc.throwPart(throwpointUp);
+            pc.throwPart(throwpointUp, throwSpeed);
         }
         if (lastMove.x == 0 && lastMove.y == -1)
         {
-            pc.throwPart(throwpointDown);
+            pc.throwPart(throwpointDown, throwSpeed);
         }
         if (lastMove.x == -1 && lastMove.y == 0)
         {
-            pc.throwPart(throwpointLeft);
+            pc.throwPart(throwpointLeft, throwSpeed);
         }
         if (lastMove.x == 1 && lastMove.y == 0)
         {
-            pc.throwPart(throwpointRight);
-        }
-        nostettava = null;
+            pc.throwPart(throwpointRight, throwSpeed);
+        }        
     }
 }

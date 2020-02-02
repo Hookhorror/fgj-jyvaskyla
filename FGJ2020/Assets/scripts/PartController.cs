@@ -5,12 +5,13 @@ using UnityEngine;
 public class PartController : MonoBehaviour
 {
 
-    public float throwspeed = 5f;
+    private float throwspeed;
     private Vector2 throwTarget;
     private bool isThrowing = false;
 
-    public void throwPart(Transform target)
+    public void throwPart(Transform target, float speed)
     {                
+        throwspeed = speed;
         throwTarget = new Vector2(target.transform.position.x, target.transform.position.y);
         //Debug.Log(throwTarget);
         isThrowing = true; 
