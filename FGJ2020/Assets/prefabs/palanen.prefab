@@ -10,8 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 2740744530831520183}
   - component: {fileID: 2740744530831520182}
-  - component: {fileID: 2128801587}
   - component: {fileID: 2128801586}
+  - component: {fileID: 2128801587}
   - component: {fileID: 2128801588}
   m_Layer: 0
   m_Name: palanen
@@ -84,27 +84,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!50 &2128801587
-Rigidbody2D:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2740744530831520181}
-  m_BodyType: 0
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 0
-  m_Material: {fileID: 0}
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 0
 --- !u!61 &2128801586
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -131,6 +110,27 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.76, y: 0.77}
   m_EdgeRadius: 0
+--- !u!50 &2128801587
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2740744530831520181}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!114 &2128801588
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -143,3 +143,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 80b13775cee13a943ba9ca93c5739e2a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  throwspeed: 20
