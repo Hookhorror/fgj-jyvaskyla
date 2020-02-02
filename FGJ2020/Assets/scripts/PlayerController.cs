@@ -78,6 +78,7 @@ public class PlayerController : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D other)
     {
+        Debug.Log("Trigger triggered");
         if (other.gameObject.tag == "nostettava")
         {
             //nostettava = other.gameObject;
@@ -87,11 +88,22 @@ public class PlayerController : MonoBehaviour
 
     void OnTriggerExit2D(Collider2D other)
     {
+        Debug.Log("Exited trigger");
         if (other.gameObject.tag == "nostettava")
         {
             nostoJono.Remove(other.gameObject);
         }
     }
+
+    // void OnTriggerExit2D(Collider2D other)
+    // {
+    //     Debug.Log("Exited trigger");
+    //     if (other.gameObject.tag == "nostettava")
+    //     {
+
+    //     }
+    //     else nostoJono.Remove(other.gameObject);
+    // }
 
     void FixedUpdate()
     {
@@ -100,13 +112,16 @@ public class PlayerController : MonoBehaviour
 
     public void liftObject()
     {
+        // Debug.Log("Lifting object");
+        Debug.Log("Nostojono counti is: " + nostoJono.Count);
         float step = liftspeed * Time.deltaTime;
         nostettuPala.transform.position = Vector2.MoveTowards(nostettuPala.transform.position, carryPosition.position, step);
-        
+
     }
 
     public void throwPart()
-    {        
+    {
+        // Debug.Log("Throwing part");
         PartController pc = nostettuPala.gameObject.GetComponent<PartController>();
         nostoJono.Remove(nostettuPala);
         playerLifting = false;
@@ -126,6 +141,6 @@ public class PlayerController : MonoBehaviour
         if (lastMove.x == 1 && lastMove.y == 0)
         {
             pc.throwPart(throwpointRight, throwSpeed);
-        }        
+        }
     }
 }
