@@ -144,6 +144,7 @@ public class Tower : MonoBehaviour
         {
             Repair(amountRepaired);
             Debug.Log("Firerate is: " + fireRate);
+            Destroy(collision.gameObject);
         }
     }
 
