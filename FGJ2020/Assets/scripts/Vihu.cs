@@ -69,24 +69,6 @@ public class Vihu : MonoBehaviour
         
     }
 
-    //tapahtuu törmätessa
-    private void OnCollisionEnter(Collision other)
-    {
-        Debug.Log("tormasi");
-        if (other.gameObject.tag == "bullet")
-        {
-            damage(damageaPerOsuma);
-        }
-    }
-    //tapahtuu törmätessa
-    private void OnCollisionEnter2d(Collider other)
-    {
-        Debug.Log("tormasi");
-        if (other.gameObject.tag == "bullet")
-        {
-            damage(damageaPerOsuma);
-        }
-    }
 
     //tekee vahinkoa vihuun halutun maaran
     public void damage (int maara)
@@ -120,8 +102,8 @@ public class Vihu : MonoBehaviour
     void kuole()
     {
         speedScale = 0f;
-        Instantiate(rajahdys, rb.position, new Quaternion());
-        Destroy(this);
+        //Instantiate(rajahdys, rb.position, new Quaternion());
+        Destroy(gameObject);
         //TODO: implementoi kuolema ja rajahdys
     }
 
