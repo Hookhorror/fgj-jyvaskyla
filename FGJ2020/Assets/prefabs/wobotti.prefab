@@ -71,9 +71,9 @@ GameObject:
   - component: {fileID: 3503802843094213647}
   - component: {fileID: 3503802843094213646}
   - component: {fileID: 3503802843094213641}
-  - component: {fileID: 3503802843094213640}
   - component: {fileID: 2032666857}
   - component: {fileID: 1118297602}
+  - component: {fileID: 3610673573692890459}
   m_Layer: 0
   m_Name: wobotti
   m_TagString: Untagged
@@ -171,22 +171,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!114 &3503802843094213640
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3503802843094213645}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: aa25d1a8a8fb1bd4a8a94a058ce4f961, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  moveSpeed: 5
-  liftspeed: 7
-  carryPosition: {fileID: 27414673}
-  animator: {fileID: 1118297602}
 --- !u!61 &2032666857
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -232,6 +216,28 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &3610673573692890459
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3503802843094213645}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 64eab26c4e82cd340a51e5b02e30c0d6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moveSpeed: 5
+  liftspeed: 7
+  throwSpeed: 15
+  carryPosition: {fileID: 27414673}
+  throwpointUp: {fileID: 946310331182408333}
+  throwpointDown: {fileID: 6278686764023979195}
+  throwpointLeft: {fileID: 3540147164288716493}
+  throwpointRight: {fileID: 3727228727301167387}
+  animator: {fileID: 1118297602}
+  nostoJono: []
 --- !u!1 &4953992984557912731
 GameObject:
   m_ObjectHideFlags: 0
