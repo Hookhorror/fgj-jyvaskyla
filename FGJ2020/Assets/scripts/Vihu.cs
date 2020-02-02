@@ -23,8 +23,6 @@ public class Vihu : MonoBehaviour
     [Tooltip("Pitäisi olla ensimmäinen waypoint")]
 
     public GameObject nykyinenKohde;
-    private int kohdeLaskuri = 0;
-    public int viimeinenKohde = 2;
 
     public Sprite Vihu_Weak_hit;
     public Sprite Vihu_Weak_normal;
@@ -42,6 +40,8 @@ public class Vihu : MonoBehaviour
 
     public GameObject rajahdys;
 
+    private VihuWaypoint vihuWaypointScript;
+
     // objekti luodaan
     void Awake()
     {
@@ -49,14 +49,12 @@ public class Vihu : MonoBehaviour
         rb = gameObject.GetComponent<Rigidbody2D>();
         nykyinenKohde = GameObject.Find("Vihu_Waypoint_00");
 
-        //GameObject.Find("Vihu_Waypoint").transform.position;
     }
         
 
     // Start is called before the first frame update
     void Start()
     {
-        
     }
 
     // Update is called once per frame
@@ -66,7 +64,7 @@ public class Vihu : MonoBehaviour
     }
 
     //tekee vahinkoa vihuun halutun maaran
-    void damage (int maara)
+    public void damage (int maara)
     {
         if (hp >= maara)
         {
@@ -102,12 +100,11 @@ public class Vihu : MonoBehaviour
     }
 
     // uusi kohde ja mahdollisesti beissin hajotus tai elamien vahennus
-    void paasiKohteeseen(GameObject kohde)
+    void paasiKohteeseen()
     {
 
-        kohdeLaskuri++;
         //kohde.onkoViimeinen //TODO korvaa
-        if (kohdeLaskuri >= viimeinenKohde)
+        if (nykyinenKohde.GetComponent<VihuWaypoint>().onkoViimeinen)
         {
 
             kuole();
@@ -116,11 +113,8 @@ public class Vihu : MonoBehaviour
         else
         {
             GameObject vanhaKohde = nykyinenKohde;
-            //nykyinenKohde = vanhaKohde.haeSeuraavaKohde(); TODOD tämän pitäisi saada toimimaan
-            //nykyinenKohde = kohde.seuraavaKohde;
-            //nykyinenKohde = GameObject.Find("Vihu_Waypoint_" + kohdeLaskuri.ToString("D2") );
-            
-            
+
+            nykyinenKohde = vanhaKohde.GetComponent<VihuWaypoint>().seuraavaKohde;
 
         }
     }
@@ -149,9 +143,9 @@ public class Vihu : MonoBehaviour
         //minne pitää mennä
         Vector2 suunta = nykyinenKohde.transform.position;
         suunta = suunta - rb.position;
-        if (suunta.magnitude <= 0.5f)
+        if (suunta.magnitude <= 0.1f)
         {
-            paasiKohteeseen(nykyinenKohde);
+            paasiKohteeseen();
         }
 
         // hidastetaan jos pitää ja vihua voi hidastaa
