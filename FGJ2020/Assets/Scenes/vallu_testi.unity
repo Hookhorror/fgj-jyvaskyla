@@ -290,10 +290,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 27414673, guid: 992b4637faf81b3428d74b2ef5d70bb3, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0.25
-      objectReference: {fileID: 0}
     - target: {fileID: 1118297602, guid: 992b4637faf81b3428d74b2ef5d70bb3, type: 3}
       propertyPath: m_ApplyRootMotion
       value: 0
@@ -381,7 +377,7 @@ PrefabInstance:
     m_RemovedComponents:
     - {fileID: 3503802843094213640, guid: 992b4637faf81b3428d74b2ef5d70bb3, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 992b4637faf81b3428d74b2ef5d70bb3, type: 3}
---- !u!4 &1553491431 stripped
+--- !u!4 &1582605233 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 27414673, guid: 992b4637faf81b3428d74b2ef5d70bb3,
     type: 3}
