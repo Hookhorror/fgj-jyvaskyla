@@ -9,6 +9,7 @@ public class Tower : MonoBehaviour
     [Header("Attributes")]
     public float maxHp = 100f;
     public float hp;
+    public float shotHpCost = 5f;
     public float range;
     public float maxFireRate = 1;
     public float fireRate;
@@ -97,7 +98,9 @@ public class Tower : MonoBehaviour
         // Spawn a bullet
         GameObject bulletGO = (GameObject)Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
         Bullet bullet = bulletGO.GetComponent<Bullet>();
-
+        
+        hp -= shotHpCost;
+        if (hp < 0) hp = 0;
 
         if (bullet != null)
             bullet.Seek(target);
