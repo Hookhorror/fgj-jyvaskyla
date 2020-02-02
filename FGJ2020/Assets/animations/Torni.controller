@@ -168,9 +168,9 @@ AnimatorController:
     m_DefaultBool: 0
     m_Controller: {fileID: 0}
   - m_Name: HP
-    m_Type: 3
-    m_DefaultFloat: 0
-    m_DefaultInt: 100
+    m_Type: 1
+    m_DefaultFloat: 100
+    m_DefaultInt: 0
     m_DefaultBool: 0
     m_Controller: {fileID: 0}
   m_AnimatorLayers:
@@ -273,7 +273,10 @@ AnimatorStateTransition:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: 
-  m_Conditions: []
+  m_Conditions:
+  - m_ConditionMode: 3
+    m_ConditionEvent: HP
+    m_EventTreshold: 50
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 3173007327206608638}
   m_Solo: 0
@@ -308,7 +311,7 @@ AnimatorStateMachine:
     m_Position: {x: 600, y: 180, z: 0}
   - serializedVersion: 1
     m_State: {fileID: -3300401500191654575}
-    m_Position: {x: 590, y: 20, z: 0}
+    m_Position: {x: 610, y: 20, z: 0}
   m_ChildStateMachines: []
   m_AnyStateTransitions: []
   m_EntryTransitions: []
