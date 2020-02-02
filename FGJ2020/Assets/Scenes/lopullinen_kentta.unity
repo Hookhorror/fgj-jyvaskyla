@@ -304,6 +304,12 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 2001925391}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &216707620 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6986108840853844149, guid: 388722d9cff7d934dbd38c69c3ed96d5,
+    type: 3}
+  m_PrefabInstance: {fileID: 1476284271}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &281029274 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6986108840853844149, guid: 388722d9cff7d934dbd38c69c3ed96d5,
@@ -3445,7 +3451,7 @@ PrefabInstance:
         type: 3}
       propertyPath: seuraavaKohde
       value: 
-      objectReference: {fileID: 1543779931}
+      objectReference: {fileID: 216707620}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 388722d9cff7d934dbd38c69c3ed96d5, type: 3}
 --- !u!1 &1642494410 stripped
