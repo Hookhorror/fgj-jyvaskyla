@@ -70,6 +70,7 @@ public class Vihu : MonoBehaviour
     {
         if (hp >= maara)
         {
+            hitmarker.Play(0);
             //hp:ta on enemman kuin mita on tulossa, niin otetaan vahinkoa
             hp = hp - maara;
             wasHit = hitCoolDownFrames;
