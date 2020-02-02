@@ -11,7 +11,7 @@ public class PalikkaSpawnerScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        seuraavaanPalikkaan = valiaPalikoilla;
+        seuraavaanPalikkaan = 50;
     }
 
     // Update is called once per frame
