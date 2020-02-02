@@ -51,6 +51,8 @@ public class Vihu : MonoBehaviour
         hp = maxhp;
         rb = gameObject.GetComponent<Rigidbody2D>();
         nykyinenKohde = GameObject.Find("Vihu_Waypoint_00");
+        //rb.isKinematic = false;
+        //rb.detectCollisions = true;
 
     }
         
@@ -68,8 +70,18 @@ public class Vihu : MonoBehaviour
     }
 
     //tapahtuu törmätessa
+    private void OnCollisionEnter(Collision other)
+    {
+        Debug.Log("tormasi");
+        if (other.gameObject.tag == "bullet")
+        {
+            damage(damageaPerOsuma);
+        }
+    }
+    //tapahtuu törmätessa
     private void OnCollisionEnter2d(Collider other)
     {
+        Debug.Log("tormasi");
         if (other.gameObject.tag == "bullet")
         {
             damage(damageaPerOsuma);
@@ -85,13 +97,13 @@ public class Vihu : MonoBehaviour
             //hp:ta on enemman kuin mita on tulossa, niin otetaan vahinkoa
             hp = hp - maara;
             wasHit = hitCoolDownFrames;
-            if (hp/maxhp <= strongToMedium)
+            if (((hp + 0.0) /(maxhp + 0.0)) >= strongToMedium)
             {
-                this.GetComponent<SpriteRenderer>().sprite = Vihu_Weak_hit;
+                this.GetComponent<SpriteRenderer>().sprite = Vihu_Strong_hit;
             }
             else
             {
-                this.GetComponent<SpriteRenderer>().sprite = Vihu_Strong_hit;
+                this.GetComponent<SpriteRenderer>().sprite = Vihu_Weak_hit;
 
             }
 
@@ -142,7 +154,7 @@ public class Vihu : MonoBehaviour
         }
         else if (wasHit ==0)
         {
-            if (hp/maxhp >= strongToMedium)
+            if (((hp + 0.0) / (maxhp + 0.0)) >= strongToMedium)
             {
                 this.GetComponent<SpriteRenderer>().sprite = Vihu_Strong_normal;
 
@@ -157,7 +169,7 @@ public class Vihu : MonoBehaviour
         //minne pitää mennä
         Vector2 suunta = nykyinenKohde.transform.position;
         suunta = suunta - rb.position;
-        if (suunta.magnitude <= 0.1f)
+        if (suunta.magnitude <= 0.3f)
         {
             paasiKohteeseen();
         }

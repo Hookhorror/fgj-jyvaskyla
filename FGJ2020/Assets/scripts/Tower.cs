@@ -9,11 +9,14 @@ public class Tower : MonoBehaviour
     [Header("Attributes")]
     public float maxHp = 100f;
     public float hp;
+    public float shotHpCost = 5f;
     public float range;
     public float maxFireRate = 1;
     public float fireRate;
+    public float brokenFirerate = 0.5f;
     public float fireCountdown = 0f;
     public float amountRepaired = 10f;
+    public Animator animator;
 
     [Header("Unity Setup Fields")]
     public string enemyTag = "Enemy";
@@ -27,7 +30,7 @@ public class Tower : MonoBehaviour
     void Start()
     {
         InvokeRepeating("UpdateTarget", 0f, 0.5f);
-        Debug.Log("Firerate is: " + fireRate);
+        //Debug.Log("Firerate is: " + fireRate);
     }
 
     void UpdateTarget()
@@ -86,6 +89,8 @@ public class Tower : MonoBehaviour
         fireCountdown -= Time.deltaTime;
 
         UpdateFireRate();
+
+        animator.SetFloat("HP", hp);
     }
 
     void Shoot()
@@ -93,28 +98,31 @@ public class Tower : MonoBehaviour
         // Spawn a bullet
         GameObject bulletGO = (GameObject)Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
         Bullet bullet = bulletGO.GetComponent<Bullet>();
-
+        
+        hp -= shotHpCost;
+        if (hp < 0) hp = 0;
 
         if (bullet != null)
             bullet.Seek(target);
 
-        Debug.Log("Shots fired!");
+        //Debug.Log("Shots fired!");
     }
 
     void Repair(float hp_)
     {
         if ((hp + hp_) > maxHp) hp = maxHp;
         else hp += hp_;
-        Debug.Log("Raised HP by " + hp_ + ", HP is now " + hp + "/" + maxHp);
+        Debug.Log("Raised HP by " + hp_ + ", HP is now " + hp + "/" + maxHp);        
     }
 
 
     void UpdateFireRate()
     {
-        if (hp < 100f)
+        if (hp < 50f)
         {
-            fireRate = maxFireRate * (hp / 100) + 0.1f;
-            Debug.Log("Firerate is: " + fireRate);
+            // fireRate = maxFireRate * (hp / 100) + 0.1f;
+            // Debug.Log("Firerate is: " + fireRate);
+            fireRate = brokenFirerate;
         }
         else fireRate = maxFireRate;
     }

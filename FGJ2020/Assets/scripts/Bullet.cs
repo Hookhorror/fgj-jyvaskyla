@@ -8,6 +8,8 @@ public class Bullet : MonoBehaviour
     private Transform target;
     public float speed = 70f;
     public GameObject impactEffect;
+    private Vihu vihuScript;
+    public int vahinkoa = 5;
 
     public void Seek(Transform _target)
     {
@@ -28,6 +30,7 @@ public class Bullet : MonoBehaviour
 
         if (dir.magnitude <= distanceThisFrame)
         {
+            target.GetComponent<Vihu>().damage(vahinkoa);
             HitTarget();
             return;
         }
@@ -40,7 +43,7 @@ public class Bullet : MonoBehaviour
         GameObject effect = (GameObject)Instantiate(impactEffect, transform.position, transform.rotation);
         Destroy(effect, 2f);
         Destroy(gameObject);
-        Debug.Log("Something was hit!");
+        //Debug.Log("Something was hit!");
     }
 
     // void OnCollisionEnter2D(Collision2D collision)
