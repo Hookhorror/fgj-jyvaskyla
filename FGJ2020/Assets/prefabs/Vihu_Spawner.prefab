@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &6986108840853844149
+--- !u!1 &3085532217357257321
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,42 +8,46 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 6986108840853844148}
-  - component: {fileID: 6986108840853844151}
+  - component: {fileID: 3085532217357257320}
+  - component: {fileID: 3085532217357257323}
   m_Layer: 0
-  m_Name: Vihu_Waypoint_00
+  m_Name: Vihu_Spawner
   m_TagString: Untagged
-  m_Icon: {fileID: 7174288486110832750, guid: 0000000000000000d000000000000000, type: 0}
+  m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
   m_IsActive: 1
---- !u!4 &6986108840853844148
+--- !u!4 &3085532217357257320
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6986108840853844149}
+  m_GameObject: {fileID: 3085532217357257321}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.73, y: 2.25, z: -4.822784}
+  m_LocalPosition: {x: -3.45, y: -5.7, z: -4.822784}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &6986108840853844151
+--- !u!114 &3085532217357257323
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6986108840853844149}
+  m_GameObject: {fileID: 3085532217357257321}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9ec2ec06c9a67524a8b395751b3fcdd7, type: 3}
+  m_Script: {fileID: 11500000, guid: 2c836847a7cb42041bc9ddc1b8d16a82, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  onkoViimeinen: 0
-  Waypoints: {fileID: 0}
-  seuraavaKohde: {fileID: 0}
-  monesko: 0
+  aaltoja: 3
+  valiaikaVihut: 20
+  valiaikaAallot: 200
+  aallossaVihuja: 5
+  alkuPaussi: 60
+  nykyinenKohde: {fileID: 0}
+  spawnattava: {fileID: 6294226949548888773, guid: 9b49cd5da7847e74b8c80f831c7dd0fd,
+    type: 3}

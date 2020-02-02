@@ -7,14 +7,13 @@ public class VihuWaypoint : MonoBehaviour
     //viimeinen pitäisi pistää maaliin tai siis beissiin. muut ei ole viimeisiä
     public bool onkoViimeinen = true;
     //linkitety lista, osoittaa seuraavaan kohteeseen. null jos viimeinen
-    public GameObject Waypoints;
+    //public GameObject Waypoints;
     public GameObject seuraavaKohde;
-    public int monesko = 0;
 
     void Awake()
     {
-        string nimi = "Vihu_Waypoint_" + (monesko + 1).ToString("D2");
-        seuraavaKohde = GameObject.Find(nimi); ;
+        //string nimi = "Vihu_Waypoint_" + (monesko + 1).ToString("D2");
+        //seuraavaKohde = GameObject.Find(nimi); ;
         
 
     }
