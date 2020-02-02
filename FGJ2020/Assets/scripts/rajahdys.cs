@@ -28,7 +28,7 @@ public class rajahdys : MonoBehaviour
     {
         if (ikaaJaljella <= 0)
         {
-            Destroy(this);
+            Destroy(gameObject);
         }
         ikaaJaljella--;
     }

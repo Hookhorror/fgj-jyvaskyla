@@ -119,10 +119,10 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 1
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0, y: -0.03573543}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -133,7 +133,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 1
   serializedVersion: 2
-  m_Size: {x: 0.76, y: 0.77}
+  m_Size: {x: 0.76, y: 1.0763048}
   m_EdgeRadius: 0
 --- !u!114 &6220415534439910252
 MonoBehaviour:
@@ -150,11 +150,14 @@ MonoBehaviour:
   target: {fileID: 0}
   maxHp: 100
   hp: 0
+  shotHpCost: 5
   range: 5
   maxFireRate: 1
   fireRate: 1
+  brokenFirerate: 0.5
   fireCountdown: 5
   amountRepaired: 10
+  animator: {fileID: 0}
   enemyTag: Enemy
   rb: {fileID: 6220415534439910253}
   turnSpeed: 5
