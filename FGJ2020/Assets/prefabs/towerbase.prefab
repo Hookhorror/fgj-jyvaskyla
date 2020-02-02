@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1509509180412881610}
   - component: {fileID: 1509509180412881613}
+  - component: {fileID: 8717867353897979290}
   m_Layer: 0
   m_Name: towerbase
   m_TagString: Untagged
@@ -83,6 +84,32 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!61 &8717867353897979290
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1509509180412881612}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: -0.2686046}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 0.9411765, y: 1.3333334}
+    newSize: {x: 0.9411765, y: 1.3333334}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.9411765, y: 0.79612404}
+  m_EdgeRadius: 0
 --- !u!1001 &1509509181958895739
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -175,7 +202,8 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 1.2678932
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 6220415534439910255, guid: 4b1eee7a403eced45845f2011afed383, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 4b1eee7a403eced45845f2011afed383, type: 3}
 --- !u!4 &4708823573213933709 stripped
 Transform:
