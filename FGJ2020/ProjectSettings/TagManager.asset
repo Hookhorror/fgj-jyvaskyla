@@ -8,6 +8,7 @@ TagManager:
   - Tower
   - Enemy
   - RepairTools
+  - bullet
   layers:
   - Default
   - TransparentFX

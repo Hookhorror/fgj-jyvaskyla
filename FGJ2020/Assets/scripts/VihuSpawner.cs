@@ -35,7 +35,6 @@ public class VihuSpawner : MonoBehaviour
 
     void spawnaa()
     {
-        Debug.Log("spawned" + aallonLoppuun);
         paikka = GameObject.Find("Vihu_Spawner").transform.position;
         Instantiate(spawnattava, paikka, new Quaternion());
 

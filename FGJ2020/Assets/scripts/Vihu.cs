@@ -40,6 +40,8 @@ public class Vihu : MonoBehaviour
 
     public GameObject rajahdys;
 
+    public int damageaPerOsuma = 10; 
+
     private VihuWaypoint vihuWaypointScript;
     public AudioSource hitmarker;
 
@@ -63,6 +65,15 @@ public class Vihu : MonoBehaviour
     void Update()
     {
         
+    }
+
+    //tapahtuu törmätessa
+    private void OnCollisionEnter2d(Collider other)
+    {
+        if (other.gameObject.tag == "bullet")
+        {
+            damage(damageaPerOsuma);
+        }
     }
 
     //tekee vahinkoa vihuun halutun maaran
