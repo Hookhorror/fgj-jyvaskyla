@@ -75,7 +75,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 893438bbf9ca0f7458c195c84d560fe9, type: 3}
+  m_Sprite: {fileID: -6701486308445607678, guid: ca78b5eadb1fa32429f90b1a99d6a990,
+    type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -124,7 +125,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.76, y: 0.77}
+    oldSize: {x: 0.5546875, y: 0.8671875}
     newSize: {x: 0.76, y: 0.77}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -146,10 +147,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 0}
-  health: 0
+  maxHp: 100
+  hp: 0
   range: 5
+  maxFireRate: 1
   fireRate: 1
   fireCountdown: 5
+  amountRepaired: 10
   enemyTag: Enemy
   rb: {fileID: 6220415534439910253}
   turnSpeed: 5
