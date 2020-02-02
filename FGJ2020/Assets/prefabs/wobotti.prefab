@@ -73,7 +73,7 @@ GameObject:
   - component: {fileID: 3503802843094213641}
   - component: {fileID: 2032666857}
   - component: {fileID: 1118297602}
-  - component: {fileID: 3610673573692890459}
+  - component: {fileID: 6293579033435649475}
   m_Layer: 0
   m_Name: wobotti
   m_TagString: Untagged
@@ -216,6 +216,7 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &6293579033435649475
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -237,7 +238,6 @@ MonoBehaviour:
   throwpointRight: {fileID: 3727228727301167387}
   animator: {fileID: 1118297602}
   nostoJono: []
---- !u!114 &3610673573692890459
 --- !u!1 &4953992984557912731
 GameObject:
   m_ObjectHideFlags: 0
