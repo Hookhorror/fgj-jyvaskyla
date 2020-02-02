@@ -8,6 +8,7 @@ TagManager:
   - Tower
   - Enemy
   - RepairTools
+  - bullet
   layers:
   - Default
   - TransparentFX
@@ -50,4 +51,7 @@ TagManager:
     locked: 0
   - name: Vihut
     uniqueID: 3860497095
+    locked: 0
+  - name: hiteffect
+    uniqueID: 84892877
     locked: 0

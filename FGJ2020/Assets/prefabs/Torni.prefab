@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 6220415534439910255}
   - component: {fileID: 6220415534439910252}
   - component: {fileID: 6220415534439910254}
+  - component: {fileID: 8492361616367879654}
   m_Layer: 0
   m_Name: Torni
   m_TagString: Tower
@@ -125,7 +126,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.5546875, y: 0.8671875}
+    oldSize: {x: 0.6960784, y: 1.0882353}
     newSize: {x: 0.76, y: 0.77}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -176,6 +177,25 @@ MonoBehaviour:
   bulletPrefab: {fileID: 4043648922401788134, guid: 49ff5e18a7650c5e5a22bed3557049e3,
     type: 3}
   bulletForce: 20
+--- !u!95 &8492361616367879654
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6173239426211072244}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 933111b009218774eb29052ee16bb18c, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &6220415535476392136
 GameObject:
   m_ObjectHideFlags: 0
