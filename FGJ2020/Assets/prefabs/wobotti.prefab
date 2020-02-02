@@ -216,7 +216,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &3610673573692890459
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -238,6 +237,7 @@ MonoBehaviour:
   throwpointRight: {fileID: 3727228727301167387}
   animator: {fileID: 1118297602}
   nostoJono: []
+--- !u!114 &3610673573692890459
 --- !u!1 &4953992984557912731
 GameObject:
   m_ObjectHideFlags: 0
