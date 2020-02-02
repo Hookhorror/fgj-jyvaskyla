@@ -7,10 +7,13 @@ public class Tower : MonoBehaviour
     public Transform target;
 
     [Header("Attributes")]
-    public int health;
+    public float maxHp = 100f;
+    public float hp;
     public float range;
-    public float fireRate = 1f;
+    public float maxFireRate = 1;
+    public float fireRate;
     public float fireCountdown = 0f;
+    public float amountRepaired = 10f;
 
     [Header("Unity Setup Fields")]
     public string enemyTag = "Enemy";
@@ -24,6 +27,7 @@ public class Tower : MonoBehaviour
     void Start()
     {
         InvokeRepeating("UpdateTarget", 0f, 0.5f);
+        Debug.Log("Firerate is: " + fireRate);
     }
 
     void UpdateTarget()
@@ -80,6 +84,8 @@ public class Tower : MonoBehaviour
         }
 
         fireCountdown -= Time.deltaTime;
+
+        UpdateFireRate();
     }
 
     void Shoot()
@@ -95,6 +101,24 @@ public class Tower : MonoBehaviour
         Debug.Log("Shots fired!");
     }
 
+    void Repair(float hp_)
+    {
+        if ((hp + hp_) > maxHp) hp = maxHp;
+        else hp += hp_;
+        Debug.Log("Raised HP by " + hp_ + ", HP is now " + hp + "/" + maxHp);
+    }
+
+
+    void UpdateFireRate()
+    {
+        if (hp < 100f)
+        {
+            fireRate = maxFireRate * (hp / 100) + 0.1f;
+            Debug.Log("Firerate is: " + fireRate);
+        }
+        else fireRate = maxFireRate;
+    }
+
     // void OnCOllisionEnter2D(Collision2D collision)
     // {
     //     AddHp(5);
@@ -106,23 +130,17 @@ public class Tower : MonoBehaviour
     // }
 
 
-    // void OnTriggerEnter2D(Collider2D collision)
-    // {
-    //     if (collision.CompareTag("Player"))
-    //     {
-    //         AddHp(5);
-    //     }
-    // }
+    void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.CompareTag("RepairTools") && hp < maxHp)
+        {
+            Repair(amountRepaired);
+            Debug.Log("Firerate is: " + fireRate);
+        }
+    }
 
     // void OnTriggerStay2D(Collider2D collider)
     // {
     //     AddHp(1);
     // }
-
-
-    private void AddHp(int hp)
-    {
-        health += hp;
-        Debug.Log(health);
-    }
 }
