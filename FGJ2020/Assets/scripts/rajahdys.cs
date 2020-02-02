@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class rajahdys : MonoBehaviour
 {
-    public int elinIka = 5;
+    public int elinIka = 2;
     private int ikaaJaljella;
 
     void Awake()
