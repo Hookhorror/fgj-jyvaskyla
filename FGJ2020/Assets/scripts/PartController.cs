@@ -8,7 +8,7 @@ public class PartController : MonoBehaviour
     private float throwspeed;
     private Vector2 throwTarget;
     private bool isThrowing = false;
-    public Rigidbody2D rb;
+    // public Rigidbody2D rb;
 
     public void throwPart(Transform target, float speed)
     {                
@@ -31,10 +31,10 @@ public class PartController : MonoBehaviour
                 isThrowing = false;
             }
         }
-        if (Input.GetButton("Fire1"))
-        {
-            rb.AddForce(transform.right * 10f);
-        }
+        // if (Input.GetButton("Fire1"))
+        // {
+        //     rb.AddForce(transform.right * 10f);
+        // }
     }
 
     void OnTriggerEnter2d (Collider2D hitInfo)
