@@ -212,6 +212,11 @@ PrefabInstance:
       propertyPath: animator
       value: 
       objectReference: {fileID: 7000906640020782493}
+    - target: {fileID: 6220415534439910253, guid: 4b1eee7a403eced45845f2011afed383,
+        type: 3}
+      propertyPath: m_Constraints
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 6220415534439910254, guid: 4b1eee7a403eced45845f2011afed383,
         type: 3}
       propertyPath: m_Enabled
@@ -221,6 +226,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_IsTrigger
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6220415534439910255, guid: 4b1eee7a403eced45845f2011afed383,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6220415534439910255, guid: 4b1eee7a403eced45845f2011afed383,
+        type: 3}
+      propertyPath: m_UsedByEffector
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4b1eee7a403eced45845f2011afed383, type: 3}

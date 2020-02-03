@@ -16,8 +16,9 @@ public class PlayerController : MonoBehaviour
     private Vector2 movement;
     private Vector2 lastMove;
     private GameObject nostettuPala;
-    private bool playerMoving = false;
-    private bool playerLifting = false;
+    private bool isMoving = false;
+    private bool isLifting = false;
+    private bool isCarrying = false;
     public List<GameObject> nostoJono = new List<GameObject>();
 
 
@@ -29,7 +30,7 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        playerMoving = false;
+        isMoving = false;
 
         // x and y movement
         movement.x = Input.GetAxisRaw("Horizontal");
@@ -37,13 +38,13 @@ public class PlayerController : MonoBehaviour
 
         if (movement.x != 0 || movement.y != 0)
         {
-            playerMoving = true;
+            isMoving = true;
             lastMove = new Vector2(movement.x, movement.y);
         }
 
         animator.SetFloat("MoveX", movement.x);
         animator.SetFloat("MoveY", movement.y);
-        animator.SetBool("PlayerMoving", playerMoving);
+        animator.SetBool("PlayerMoving", isMoving);
         animator.SetFloat("LastMoveX", lastMove.x);
         animator.SetFloat("LastMoveY", lastMove.y);
 
@@ -52,10 +53,10 @@ public class PlayerController : MonoBehaviour
 
             if (nostoJono.Count > 0) // nostettava != null
             {
-                if (!playerLifting)
+                if (!isLifting)
                 {
                     {
-                        playerLifting = true;
+                        isLifting = true;
                         nostettuPala = nostoJono[0];
                     }
                 }
@@ -67,7 +68,7 @@ public class PlayerController : MonoBehaviour
 
         }
 
-        if (playerLifting)
+        if (isLifting)
         {
             liftObject();
         }
@@ -86,24 +87,19 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    void OnCollisionEnter2D(Collision2D other)
+    {
+        Debug.Log("Törmäys!");
+    }
+
     void OnTriggerExit2D(Collider2D other)
     {
-        Debug.Log("Exited trigger");
+        //Debug.Log("Exited trigger");
         if (other.gameObject.tag == "nostettava")
         {
             nostoJono.Remove(other.gameObject);
         }
     }
-
-    // void OnTriggerExit2D(Collider2D other)
-    // {
-    //     Debug.Log("Exited trigger");
-    //     if (other.gameObject.tag == "nostettava")
-    //     {
-
-    //     }
-    //     else nostoJono.Remove(other.gameObject);
-    // }
 
     void FixedUpdate()
     {
@@ -113,7 +109,7 @@ public class PlayerController : MonoBehaviour
     public void liftObject()
     {
         // Debug.Log("Lifting object");
-        Debug.Log("Nostojono counti is: " + nostoJono.Count);
+        //Debug.Log("Nostojono counti is: " + nostoJono.Count);
         float step = liftspeed * Time.deltaTime;
         nostettuPala.transform.position = Vector2.MoveTowards(nostettuPala.transform.position, carryPosition.position, step);
 
@@ -124,7 +120,7 @@ public class PlayerController : MonoBehaviour
         // Debug.Log("Throwing part");
         PartController pc = nostettuPala.gameObject.GetComponent<PartController>();
         nostoJono.Remove(nostettuPala);
-        playerLifting = false;
+        isLifting = false;
         //Debug.Log(lastMove);
         if (lastMove.x == 0 && lastMove.y == 1)
         {

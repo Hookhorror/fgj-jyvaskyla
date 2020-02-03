@@ -194,6 +194,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: towerbase (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 4801259839408141079, guid: 2d440ecf3822a2b42a5ddf7089eb81b0,
+        type: 3}
+      propertyPath: hp
+      value: 100
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2d440ecf3822a2b42a5ddf7089eb81b0, type: 3}
 --- !u!4 &121189852 stripped
@@ -383,6 +388,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: towerbase (10)
       objectReference: {fileID: 0}
+    - target: {fileID: 4801259839408141079, guid: 2d440ecf3822a2b42a5ddf7089eb81b0,
+        type: 3}
+      propertyPath: hp
+      value: 100
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2d440ecf3822a2b42a5ddf7089eb81b0, type: 3}
 --- !u!4 &299916353 stripped
@@ -543,6 +553,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: towerbase (6)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4801259839408141079, guid: 2d440ecf3822a2b42a5ddf7089eb81b0,
+        type: 3}
+      propertyPath: hp
+      value: 100
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2d440ecf3822a2b42a5ddf7089eb81b0, type: 3}
@@ -956,6 +971,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: towerbase (5)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4801259839408141079, guid: 2d440ecf3822a2b42a5ddf7089eb81b0,
+        type: 3}
+      propertyPath: hp
+      value: 100
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2d440ecf3822a2b42a5ddf7089eb81b0, type: 3}
@@ -1528,7 +1548,7 @@ Transform:
   - {fileID: 479162270}
   - {fileID: 1678420587}
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &732844964
 PrefabInstance:
@@ -1585,7 +1605,7 @@ PrefabInstance:
     - target: {fileID: 2740744530831520183, guid: 1ae4a77e27f410b4e8127abf6e10b110,
         type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 2740744530831520183, guid: 1ae4a77e27f410b4e8127abf6e10b110,
         type: 3}
@@ -1815,7 +1835,7 @@ PrefabInstance:
     - target: {fileID: 6357502505781856056, guid: c561c2133f252d847ae4bc20aa44b5e6,
         type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 6357502505781856056, guid: c561c2133f252d847ae4bc20aa44b5e6,
         type: 3}
@@ -2002,6 +2022,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: towerbase (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4801259839408141079, guid: 2d440ecf3822a2b42a5ddf7089eb81b0,
+        type: 3}
+      propertyPath: hp
+      value: 100
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2d440ecf3822a2b42a5ddf7089eb81b0, type: 3}
@@ -2248,6 +2273,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: towerbase (11)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4801259839408141079, guid: 2d440ecf3822a2b42a5ddf7089eb81b0,
+        type: 3}
+      propertyPath: hp
+      value: 100
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2d440ecf3822a2b42a5ddf7089eb81b0, type: 3}
@@ -2582,6 +2612,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: towerbase (8)
       objectReference: {fileID: 0}
+    - target: {fileID: 4801259839408141079, guid: 2d440ecf3822a2b42a5ddf7089eb81b0,
+        type: 3}
+      propertyPath: hp
+      value: 100
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2d440ecf3822a2b42a5ddf7089eb81b0, type: 3}
 --- !u!4 &1376137305 stripped
@@ -2656,6 +2691,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: towerbase (7)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4801259839408141079, guid: 2d440ecf3822a2b42a5ddf7089eb81b0,
+        type: 3}
+      propertyPath: hp
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 4801259839408141079, guid: 2d440ecf3822a2b42a5ddf7089eb81b0,
+        type: 3}
+      propertyPath: brokenFirerate
+      value: 0.2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2d440ecf3822a2b42a5ddf7089eb81b0, type: 3}
@@ -2818,6 +2863,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: towerbase (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 4801259839408141079, guid: 2d440ecf3822a2b42a5ddf7089eb81b0,
+        type: 3}
+      propertyPath: hp
+      value: 100
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2d440ecf3822a2b42a5ddf7089eb81b0, type: 3}
 --- !u!4 &1405200914 stripped
@@ -2892,6 +2942,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: towerbase
+      objectReference: {fileID: 0}
+    - target: {fileID: 4801259839408141079, guid: 2d440ecf3822a2b42a5ddf7089eb81b0,
+        type: 3}
+      propertyPath: hp
+      value: 100
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2d440ecf3822a2b42a5ddf7089eb81b0, type: 3}
@@ -3203,7 +3258,7 @@ PrefabInstance:
     - target: {fileID: 3503802843094213647, guid: 992b4637faf81b3428d74b2ef5d70bb3,
         type: 3}
       propertyPath: m_RootOrder
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 3503802843094213647, guid: 992b4637faf81b3428d74b2ef5d70bb3,
         type: 3}
@@ -3288,6 +3343,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: towerbase (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4801259839408141079, guid: 2d440ecf3822a2b42a5ddf7089eb81b0,
+        type: 3}
+      propertyPath: hp
+      value: 100
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2d440ecf3822a2b42a5ddf7089eb81b0, type: 3}
@@ -3376,7 +3436,7 @@ Transform:
   m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1626575929
 PrefabInstance:
@@ -3524,6 +3584,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: towerbase (12)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4801259839408141079, guid: 2d440ecf3822a2b42a5ddf7089eb81b0,
+        type: 3}
+      propertyPath: hp
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 4801259839408141079, guid: 2d440ecf3822a2b42a5ddf7089eb81b0,
+        type: 3}
+      propertyPath: brokenFirerate
+      value: 0.1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2d440ecf3822a2b42a5ddf7089eb81b0, type: 3}
@@ -3866,7 +3936,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1984758387
 PrefabInstance:
@@ -3934,6 +4004,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: towerbase (9)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4801259839408141079, guid: 2d440ecf3822a2b42a5ddf7089eb81b0,
+        type: 3}
+      propertyPath: hp
+      value: 100
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2d440ecf3822a2b42a5ddf7089eb81b0, type: 3}
@@ -4064,7 +4139,7 @@ Transform:
   - {fileID: 1405200914}
   - {fileID: 1442084921}
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &2078986478
 PrefabInstance:

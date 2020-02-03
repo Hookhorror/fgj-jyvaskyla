@@ -9,18 +9,6 @@ public class Shooting : MonoBehaviour
 
     public float bulletForce = 20f;
     // Update is called once per frame
-    void Update()
-    {
-        if (Input.GetButtonDown("Fire1"))
-        {
-            // Just for fun :D
-            // for (int i = 0; i < 100; i++)
-            // {
-            //     Shoot();
-            // }
-            Shoot();
-        }
-    }
 
     public void Shoot()
     {
