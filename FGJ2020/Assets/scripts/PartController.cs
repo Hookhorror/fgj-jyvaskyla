@@ -31,5 +31,9 @@ public class PartController : MonoBehaviour
             }
         }
     }
+    void OnDestroy()
+    {
+        //TODO lisää tähän se että vaihdeta
+    }
 
 }
