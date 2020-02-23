@@ -114,9 +114,8 @@ public class Vihu : MonoBehaviour
         //kohde.onkoViimeinen //TODO korvaa
         if (nykyinenKohde.GetComponent<VihuWaypoint>().onkoViimeinen)
         {
-
-            //kuole();
-            //TODO vähennä elämiä pelaajalta
+            //hidastetaan nopeutta kun
+            isSlowed = true;
         }
         else
         {

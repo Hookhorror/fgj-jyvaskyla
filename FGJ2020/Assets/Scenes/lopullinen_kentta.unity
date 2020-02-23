@@ -2030,86 +2030,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: -6143303011704641728, guid: ca78b5eadb1fa32429f90b1a99d6a990,
         type: 3}
-    - target: {fileID: -8945406130031462341, guid: 56e4737e1e345fa5e8c4474d2c7876a7,
+    - target: {fileID: 614449072697957176, guid: 56e4737e1e345fa5e8c4474d2c7876a7,
         type: 3}
-      propertyPath: napinKuva
-      value: 
-      objectReference: {fileID: 2800000, guid: 347efdecc3d30854aa780b5a2f3958bb, type: 3}
-    - target: {fileID: -8945406130031462341, guid: 56e4737e1e345fa5e8c4474d2c7876a7,
-        type: 3}
-      propertyPath: guiStyle.m_FontSize
-      value: 40
-      objectReference: {fileID: 0}
-    - target: {fileID: -8945406130031462341, guid: 56e4737e1e345fa5e8c4474d2c7876a7,
-        type: 3}
-      propertyPath: guiStyle.m_Alignment
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: -8945406130031462341, guid: 56e4737e1e345fa5e8c4474d2c7876a7,
-        type: 3}
-      propertyPath: guiStyle.m_Font
-      value: 
-      objectReference: {fileID: 12800000, guid: e3265ab4bf004d28a9537516768c1c75,
-        type: 3}
-    - target: {fileID: -8945406130031462341, guid: 56e4737e1e345fa5e8c4474d2c7876a7,
-        type: 3}
-      propertyPath: guiStyle.m_ImagePosition
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: -8945406130031462341, guid: 56e4737e1e345fa5e8c4474d2c7876a7,
-        type: 3}
-      propertyPath: guiStyle.m_StretchHeight
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: -8945406130031462341, guid: 56e4737e1e345fa5e8c4474d2c7876a7,
-        type: 3}
-      propertyPath: guiStyle.m_Normal.m_Background
-      value: 
-      objectReference: {fileID: 2800000, guid: 347efdecc3d30854aa780b5a2f3958bb, type: 3}
-    - target: {fileID: -8945406130031462341, guid: 56e4737e1e345fa5e8c4474d2c7876a7,
-        type: 3}
-      propertyPath: guiStyle.m_StretchWidth
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: -8945406130031462341, guid: 56e4737e1e345fa5e8c4474d2c7876a7,
-        type: 3}
-      propertyPath: guiStyle.m_Padding.m_Left
-      value: 25
-      objectReference: {fileID: 0}
-    - target: {fileID: -8945406130031462341, guid: 56e4737e1e345fa5e8c4474d2c7876a7,
-        type: 3}
-      propertyPath: guiStyle.m_Padding.m_Right
-      value: 25
-      objectReference: {fileID: 0}
-    - target: {fileID: -8945406130031462341, guid: 56e4737e1e345fa5e8c4474d2c7876a7,
-        type: 3}
-      propertyPath: guiStyle.m_Padding.m_Top
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: -8945406130031462341, guid: 56e4737e1e345fa5e8c4474d2c7876a7,
-        type: 3}
-      propertyPath: guiStyle.m_Padding.m_Bottom
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: -8945406130031462341, guid: 56e4737e1e345fa5e8c4474d2c7876a7,
-        type: 3}
-      propertyPath: guiStyle.m_Border.m_Left
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: -8945406130031462341, guid: 56e4737e1e345fa5e8c4474d2c7876a7,
-        type: 3}
-      propertyPath: guiStyle.m_Border.m_Right
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: -8945406130031462341, guid: 56e4737e1e345fa5e8c4474d2c7876a7,
-        type: 3}
-      propertyPath: guiStyle.m_Border.m_Top
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: -8945406130031462341, guid: 56e4737e1e345fa5e8c4474d2c7876a7,
-        type: 3}
-      propertyPath: guiStyle.m_Border.m_Bottom
-      value: 10
+      propertyPath: enemiesInBaseToLose
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 614449072697957177, guid: 56e4737e1e345fa5e8c4474d2c7876a7,
         type: 3}
