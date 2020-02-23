@@ -45,7 +45,14 @@ public class PlayerController : MonoBehaviour
         animator.SetFloat("MoveY", movement.y);
         animator.SetBool("PlayerMoving", playerMoving);
         animator.SetFloat("LastMoveX", lastMove.x);
-        animator.SetFloat("LastMoveY", lastMove.y);
+        animator.SetFloat("LastMoveY", lastMove.y); 
+
+        //Palikkaa ei ole enää kädessä, mutta se aiemmin on ollut. Tämä tapahtuu jos palikka on tuhottu kädessä ollessa.
+        if (nostettuPala == null && playerLifting)
+        {
+            //vaihdetaan siis että enää ei ole palikkaa kädessä
+            playerLifting = false;
+        }
 
         if (Input.GetButtonDown("Fire1"))
         {
@@ -59,6 +66,10 @@ public class PlayerController : MonoBehaviour
                         nostettuPala = nostoJono[0];
                     }
                 }
+                else if(nostoJono[0]== null)
+                {
+                    playerLifting = false;
+                }
                 else
                 {
                     throwPart();
@@ -67,7 +78,7 @@ public class PlayerController : MonoBehaviour
 
         }
 
-        if (playerLifting)
+        if (playerLifting && nostoJono.Count > 0)
         {
             liftObject();
         }
@@ -122,6 +133,11 @@ public class PlayerController : MonoBehaviour
     public void throwPart()
     {
         // Debug.Log("Throwing part");
+        if (nostettuPala == null)
+        {
+            playerLifting = false;
+            return;
+        }
         PartController pc = nostettuPala.gameObject.GetComponent<PartController>();
         nostoJono.Remove(nostettuPala);
         playerLifting = false;
