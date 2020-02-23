@@ -115,7 +115,7 @@ public class Vihu : MonoBehaviour
         if (nykyinenKohde.GetComponent<VihuWaypoint>().onkoViimeinen)
         {
 
-            kuole();
+            //kuole();
             //TODO vähennä elämiä pelaajalta
         }
         else
