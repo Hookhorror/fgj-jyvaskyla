@@ -138,14 +138,38 @@ public class Tower : MonoBehaviour
     // }
 
 
-    void OnTriggerEnter2D(Collider2D collision)
+    void Korjaa(Collider2D collision)
     {
+
         if (collision.CompareTag("nostettava") && hp < maxHp)
         {
+            //haetaan palikan skripti
+            PartController pc = collision.gameObject.GetComponent<PartController>();
+            if (pc != null)
+            {
+                //jos skripti löytyi niin:
+                if (pc.onkoKyydissaGet())
+                {
+                    //ei tehdä mitään kun palikka on jollain kyydissä
+                    return;
+                }
+
+            }
             Repair(amountRepaired);
-            Debug.Log("Firerate is: " + fireRate);
+            //Debug.Log("Firerate is: " + fireRate);
             Destroy(collision.gameObject);
         }
+    }
+
+    void OnTriggerEnter2D(Collider2D collision)
+    {
+        Korjaa(collision);
+    }
+
+    private void OnTriggerStay2D(Collider2D collision)
+    {
+        Korjaa(collision);
+
     }
 
     // void OnTriggerStay2D(Collider2D collider)

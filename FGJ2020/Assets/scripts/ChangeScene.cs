@@ -6,7 +6,7 @@ public class ChangeScene : MonoBehaviour
 {
     public void OpenStartScreen()
     {
-        Debug.Log("Back button clicked");
+        Debug.Log("StartingScreen button clicked");
         SceneManager.LoadScene("StartingScreen");
     }
     public void OpenCredits()

@@ -154,7 +154,7 @@ MonoBehaviour:
   range: 5
   maxFireRate: 1
   fireRate: 1
-  brokenFirerate: 0.5
+  brokenFirerate: 0.1
   fireCountdown: 5
   amountRepaired: 10
   animator: {fileID: 0}

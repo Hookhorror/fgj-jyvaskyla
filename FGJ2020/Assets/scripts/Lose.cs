@@ -7,17 +7,24 @@ public class Lose : MonoBehaviour
 {
     // private List<Vihu> enemies = new List<Vihu>();
     private int enemyCountInTrigger = 0;
-    public int enemiesInBaseToLose = 100;
-    void OnTriggerEnter2D()
+    public int enemiesInBaseToLose;
+    void OnTriggerEnter2D(UnityEngine.Collider2D collider)
     {
-        enemyCountInTrigger += 1;
-        Debug.Log(enemyCountInTrigger + "/" + enemiesInBaseToLose + " enemies in trigger");
+        if(collider.CompareTag("Enemy"))
+        {
+            enemyCountInTrigger += 1;
+            Debug.Log(enemyCountInTrigger + "/" + enemiesInBaseToLose + " enemies in trigger");
+        } 
     }
 
-    void OnTriggerExit2D()
+    void OnTriggerExit2D(UnityEngine.Collider2D collider)
     {
-        enemyCountInTrigger -= 1;
-        Debug.Log(enemyCountInTrigger + "/" + enemiesInBaseToLose + " enemies in trigger");
+        if (collider.CompareTag("Enemy"))
+        {
+            enemyCountInTrigger -= 1;
+            Debug.Log(enemyCountInTrigger + "/" + enemiesInBaseToLose + " enemies in trigger");
+
+        }
     }
 
     void Update()
