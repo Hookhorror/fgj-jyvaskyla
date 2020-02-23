@@ -2084,12 +2084,32 @@ PrefabInstance:
     - target: {fileID: -8945406130031462341, guid: 56e4737e1e345fa5e8c4474d2c7876a7,
         type: 3}
       propertyPath: guiStyle.m_Padding.m_Top
-      value: 5
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: -8945406130031462341, guid: 56e4737e1e345fa5e8c4474d2c7876a7,
         type: 3}
       propertyPath: guiStyle.m_Padding.m_Bottom
-      value: 5
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: -8945406130031462341, guid: 56e4737e1e345fa5e8c4474d2c7876a7,
+        type: 3}
+      propertyPath: guiStyle.m_Border.m_Left
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: -8945406130031462341, guid: 56e4737e1e345fa5e8c4474d2c7876a7,
+        type: 3}
+      propertyPath: guiStyle.m_Border.m_Right
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: -8945406130031462341, guid: 56e4737e1e345fa5e8c4474d2c7876a7,
+        type: 3}
+      propertyPath: guiStyle.m_Border.m_Top
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: -8945406130031462341, guid: 56e4737e1e345fa5e8c4474d2c7876a7,
+        type: 3}
+      propertyPath: guiStyle.m_Border.m_Bottom
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 614449072697957177, guid: 56e4737e1e345fa5e8c4474d2c7876a7,
         type: 3}

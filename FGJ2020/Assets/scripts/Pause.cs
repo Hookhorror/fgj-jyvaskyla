@@ -49,13 +49,13 @@ public class Pause : MonoBehaviour
         {
             //tehdään pausevalikko ja sille alue johon lisätään elementtejä
             int leveys = 430;
-            int korkeus = 200;
+            int korkeus = 300;
             GUILayout.BeginArea(new Rect(Screen.width / 2f - leveys/2f, Screen.height / 2f - korkeus/2f, leveys, korkeus));
             GUILayout.BeginVertical();
             guiElement(true, "Game is paused!",guiStyle);
             GUILayout.Space(25f);
             
-            if (guiElement(false,"Resume",guiStyle))
+            if (guiElement(false,"  Resume  ",guiStyle))
                 paused = TogglePause();
             if (guiElement(false, "Main menu", guiStyle))
             {

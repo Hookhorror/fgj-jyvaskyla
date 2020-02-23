@@ -64,6 +64,8 @@ public class PlayerController : MonoBehaviour
                     {
                         playerLifting = true;
                         nostettuPala = nostoJono[0];
+                        PartController pc = nostettuPala.gameObject.GetComponent<PartController>();
+                        pc.otettiinKyytiin();
                     }
                 }
                 else if(nostoJono[0]== null)
