@@ -47,8 +47,10 @@ public class PlayerController : MonoBehaviour
         animator.SetFloat("LastMoveX", lastMove.x);
         animator.SetFloat("LastMoveY", lastMove.y); 
 
-        if (nostettuPala == null)
+        //Palikkaa ei ole enää kädessä, mutta se aiemmin on ollut. Tämä tapahtuu jos palikka on tuhottu kädessä ollessa.
+        if (nostettuPala == null && playerLifting)
         {
+            //vaihdetaan siis että enää ei ole palikkaa kädessä
             playerLifting = false;
         }
 
