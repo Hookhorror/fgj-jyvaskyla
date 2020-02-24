@@ -155,7 +155,7 @@ public class Tower : MonoBehaviour
                 }
 
             }
-            Repair(amountRepaired);
+            Repair(pc.repairamount);
             //Debug.Log("Firerate is: " + fireRate);
             Destroy(collision.gameObject);
         }

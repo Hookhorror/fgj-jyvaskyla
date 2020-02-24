@@ -9,6 +9,7 @@ public class PartController : MonoBehaviour
     private Vector2 throwTarget;
     private bool isThrowing = false;
     private bool onkoKyydissa = false;
+    public int repairamount = 100;
 
     public void throwPart(Transform target, float speed)
     {                
