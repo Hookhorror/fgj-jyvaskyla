@@ -120,11 +120,11 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 824
-        width: 200
-        height: 200
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+        y: 831
+        width: 189
+        height: 192
+      alignment: 9
+      pivot: {x: 0.46574017, y: 0.47470665}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -141,11 +141,11 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 200
-        y: 824
-        width: 200
-        height: 200
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+        y: 831
+        width: 189
+        height: 192
+      alignment: 9
+      pivot: {x: 0.480015, y: 0.46627554}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -161,10 +161,10 @@ TextureImporter:
       name: Vihu_Weak_normal
       rect:
         serializedVersion: 2
-        x: 0
-        y: 624
-        width: 200
-        height: 200
+        x: 28
+        y: 662
+        width: 120
+        height: 114
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -182,11 +182,11 @@ TextureImporter:
       name: Vihu_Weak_hit
       rect:
         serializedVersion: 2
-        x: 200
-        y: 624
-        width: 200
-        height: 200
-      alignment: 0
+        x: 228
+        y: 660
+        width: 122
+        height: 114
+      alignment: 9
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
