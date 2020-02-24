@@ -44,7 +44,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eae3dbcf32fa73149afe3333e487066c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  valiaPalikoilla: 400
+  valiaPalikoilla: 200
   spawnattava: {fileID: 2740744530831520181, guid: 1ae4a77e27f410b4e8127abf6e10b110,
     type: 3}
 --- !u!212 &4750588983852190473

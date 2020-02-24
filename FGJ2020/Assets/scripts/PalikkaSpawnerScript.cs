@@ -25,7 +25,7 @@ public class PalikkaSpawnerScript : MonoBehaviour
         if (seuraavaanPalikkaan <= 0)
         {
             //spawnaa palikka
-            paikka = GameObject.Find("PalikkaSpawner").transform.position;
+            paikka = gameObject.transform.position;
             Instantiate(spawnattava, paikka, new Quaternion());
             seuraavaanPalikkaan = valiaPalikoilla;
         }
