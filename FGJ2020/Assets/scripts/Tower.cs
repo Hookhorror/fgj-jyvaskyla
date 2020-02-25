@@ -15,7 +15,8 @@ public class Tower : MonoBehaviour
     public float fireRate;
     public float brokenFirerate = 0.5f;
     public float fireCountdown = 0f;
-    public float amountRepaired = 10f;
+    public float korjausRajaprosentti = 0.8f;
+    public float rikkiRaja = 0.5f;
     public Animator animator;
 
     [Header("Unity Setup Fields")]
@@ -69,6 +70,7 @@ public class Tower : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        animator.SetFloat("HP", hp);
         if (target == null)
             return;
 
@@ -90,7 +92,6 @@ public class Tower : MonoBehaviour
 
         UpdateFireRate();
 
-        animator.SetFloat("HP", hp);
     }
 
     void Shoot()
@@ -113,7 +114,6 @@ public class Tower : MonoBehaviour
         if ((hp + hp_) > maxHp) hp = maxHp;
         else hp += hp_;
         Debug.Log("Raised HP by " + hp_ + ", HP is now " + hp + "/" + maxHp);
-        animator.SetFloat("HP", hp);
     }
 
 
@@ -139,10 +139,10 @@ public class Tower : MonoBehaviour
     // }
 
 
-    void Korjaa(Collider2D collision)
+    void VoikoKorjata(Collider2D collision)
     {
 
-        if (collision.CompareTag("nostettava") && hp < maxHp)
+        if (collision.CompareTag("nostettava") && hp <= korjausRajaprosentti*100f)
         {
             //haetaan palikan skripti
             PartController pc = collision.gameObject.GetComponent<PartController>();
@@ -164,12 +164,12 @@ public class Tower : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D collision)
     {
-        Korjaa(collision);
+        VoikoKorjata(collision);
     }
 
     private void OnTriggerStay2D(Collider2D collision)
     {
-        Korjaa(collision);
+        VoikoKorjata(collision);
 
     }
 

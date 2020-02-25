@@ -12,6 +12,7 @@ public class VihuSpawner : MonoBehaviour
     [Tooltip("aika lasketaan frameissa eli 60 sekunnissa")]
     public int valiaikaAallot = 100; // kuinka monen framin valein aallot tulee
     public int aallossaVihuja = 10;
+    public int seuraavassaAallossaEnemman = 1;
     public int alkuPaussi = 260;
 
     public GameObject nykyinenKohde;
@@ -73,6 +74,7 @@ public class VihuSpawner : MonoBehaviour
                 seuraavaanSpawniin = valiaikaAallot;
                 seuraavaanAaltoon = valiaikaAallot;
                 aallonLoppuun = aallossaVihuja;
+                aallossaVihuja += seuraavassaAallossaEnemman;
             }
         }
 
