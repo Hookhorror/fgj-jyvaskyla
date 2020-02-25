@@ -148,15 +148,15 @@ public class PlayerController : MonoBehaviour
         {
             pc.throwPart(throwpointUp, throwSpeed);
         }
-        if (lastMove.x == 0 && lastMove.y == -1)
+        else if (lastMove.x == 0 && lastMove.y == -1)
         {
             pc.throwPart(throwpointDown, throwSpeed);
         }
-        if (lastMove.x == -1 && lastMove.y == 0)
+        else if (lastMove.x == -1 )
         {
             pc.throwPart(throwpointLeft, throwSpeed);
         }
-        if (lastMove.x == 1 && lastMove.y == 0)
+        else if (lastMove.x == 1 )
         {
             pc.throwPart(throwpointRight, throwSpeed);
         }
