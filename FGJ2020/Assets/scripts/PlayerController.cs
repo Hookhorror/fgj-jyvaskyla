@@ -65,7 +65,7 @@ public class PlayerController : MonoBehaviour
                         playerLifting = true;
                         nostettuPala = nostoJono[0];
                         PartController pc = nostettuPala.gameObject.GetComponent<PartController>();
-                        pc.otettiinKyytiin();
+                        pc.OtettiinKyytiin();
                     }
                 }
                 else if(nostoJono[0]== null)
@@ -146,19 +146,19 @@ public class PlayerController : MonoBehaviour
         //Debug.Log(lastMove);
         if (lastMove.x == 0 && lastMove.y == 1)
         {
-            pc.throwPart(throwpointUp, throwSpeed);
+            pc.ThrowPart(throwpointUp, throwSpeed);
         }
         else if (lastMove.x == 0 && lastMove.y == -1)
         {
-            pc.throwPart(throwpointDown, throwSpeed);
+            pc.ThrowPart(throwpointDown, throwSpeed);
         }
         else if (lastMove.x == -1 )
         {
-            pc.throwPart(throwpointLeft, throwSpeed);
+            pc.ThrowPart(throwpointLeft, throwSpeed);
         }
         else if (lastMove.x == 1 )
         {
-            pc.throwPart(throwpointRight, throwSpeed);
+            pc.ThrowPart(throwpointRight, throwSpeed);
         }
     }
 }

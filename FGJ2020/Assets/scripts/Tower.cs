@@ -149,7 +149,7 @@ public class Tower : MonoBehaviour
             if (pc != null)
             {
                 //jos skripti löytyi niin:
-                if (pc.onkoKyydissaGet())
+                if (pc.OnkoKyydissaGet())
                 {
                     //ei tehdä mitään kun palikka on jollain kyydissä
                     return;

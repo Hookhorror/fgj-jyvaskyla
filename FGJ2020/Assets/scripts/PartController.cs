@@ -9,9 +9,10 @@ public class PartController : MonoBehaviour
     private Vector2 throwTarget;
     private bool isThrowing = false;
     private bool onkoKyydissa = false;
+    private bool onkoSpawnerilla;
     public int repairamount = 100;
 
-    public void throwPart(Transform target, float speed)
+    public void ThrowPart(Transform target, float speed)
     {                
         throwspeed = speed;
         throwTarget = new Vector2(target.transform.position.x, target.transform.position.y);
@@ -20,13 +21,22 @@ public class PartController : MonoBehaviour
         onkoKyydissa = false;
     }
 
-    public void otettiinKyytiin()
+    public void OtettiinKyytiin()
     {
+        onkoSpawnerilla = false;
         onkoKyydissa = true;
     }
-    public bool onkoKyydissaGet()
+    public bool OnkoKyydissaGet()
     {
         return onkoKyydissa;
+    }
+    public bool OnkoJalustallaGet()
+    {
+        return onkoSpawnerilla;
+    }
+    public void SpawnattiinSpawnerista()
+    {
+        onkoSpawnerilla = true;
     }
 
     void Update()

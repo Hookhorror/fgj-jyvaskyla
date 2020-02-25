@@ -8,6 +8,8 @@ public class PalikkaSpawnerScript : MonoBehaviour
     private int seuraavaanPalikkaan;
     public GameObject spawnattava;
     private Vector2 paikka;
+    private GameObject spawnattu;
+    public int valiAikaKunOtettiinEdellinen = 10;
     // Start is called before the first frame update
     void Start()
     {
@@ -19,17 +21,35 @@ public class PalikkaSpawnerScript : MonoBehaviour
     {
 
     }
+    void Spawnaa()
+    {
+        spawnattu = (GameObject)Instantiate(spawnattava, gameObject.transform.position, new Quaternion());
+        spawnattu.GetComponent<PartController>().SpawnattiinSpawnerista();
+        seuraavaanPalikkaan = valiaPalikoilla;
+
+    }
+
     //is called a fixed number of times per second
     void FixedUpdate()
     {
-        if (seuraavaanPalikkaan <= 0)
+        if (seuraavaanPalikkaan <= 0 )
         {
+            if (spawnattu == null)
+            {
+                Spawnaa();
+            }
+            else if (!spawnattu.GetComponent<PartController>().OnkoJalustallaGet())
+            {
+                spawnattu = null;
+                seuraavaanPalikkaan = valiAikaKunOtettiinEdellinen;
+            }
             //spawnaa palikka
-            paikka = gameObject.transform.position;
-            Instantiate(spawnattava, paikka, new Quaternion());
-            seuraavaanPalikkaan = valiaPalikoilla;
         }
-        seuraavaanPalikkaan--;
+        else if (seuraavaanPalikkaan >= 0)
+        {
+            
+            seuraavaanPalikkaan--;
+        }
 
     }
 }
