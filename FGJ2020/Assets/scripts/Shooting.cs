@@ -30,7 +30,7 @@ public class Shooting : MonoBehaviour
         Rigidbody2D rb = bullet.GetComponent<Rigidbody2D>();
         // Makes the bullet fly in simple
         rb.AddForce(firePoint.up * bulletForce, ForceMode2D.Impulse);
-        Debug.Log("Shots fired!");
+        //Debug.Log("Shots fired!");
     }
 
     void OnTriggerEnter2D(Collider2D collision)

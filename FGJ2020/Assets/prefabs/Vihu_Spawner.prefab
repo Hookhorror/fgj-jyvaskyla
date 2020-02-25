@@ -44,10 +44,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   aaltoja: 3
-  valiaikaVihut: 20
-  valiaikaAallot: 200
-  aallossaVihuja: 5
-  alkuPaussi: 60
+  valiaikaVihut: 25
+  valiaikaAallot: 400
+  aallossaVihuja: 6
+  alkuPaussi: 400
   nykyinenKohde: {fileID: 0}
   spawnattava: {fileID: 6294226949548888773, guid: 9b49cd5da7847e74b8c80f831c7dd0fd,
     type: 3}
+  listaKohteita: []

@@ -112,7 +112,8 @@ public class Tower : MonoBehaviour
     {
         if ((hp + hp_) > maxHp) hp = maxHp;
         else hp += hp_;
-        Debug.Log("Raised HP by " + hp_ + ", HP is now " + hp + "/" + maxHp);        
+        Debug.Log("Raised HP by " + hp_ + ", HP is now " + hp + "/" + maxHp);
+        animator.SetFloat("HP", hp);
     }
 
 
