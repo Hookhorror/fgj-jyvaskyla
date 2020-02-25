@@ -14,6 +14,7 @@ public class VihuSpawner : MonoBehaviour
     public int aallossaVihuja = 10;
     public int seuraavassaAallossaEnemman = 1;
     public int alkuPaussi = 260;
+    public float maxPyoriminen = 50f;
 
     public GameObject nykyinenKohde;
 
@@ -36,10 +37,22 @@ public class VihuSpawner : MonoBehaviour
 
     void spawnaa()
     {
-        paikka = GameObject.Find("Vihu_Spawner").transform.position;
-        Instantiate(spawnattava, paikka, new Quaternion());
+        
+        paikka = gameObject.transform.position;
+        GameObject spawnattu =(GameObject)Instantiate(spawnattava, paikka, new Quaternion());
+        if (Random.value > 0.5f)
+        {
+
+            spawnattu.GetComponent<Rigidbody2D>().AddTorque(Random.Range((maxPyoriminen*-0.5f), maxPyoriminen * -1f));
+        }
+        else
+        {
+            spawnattu.GetComponent<Rigidbody2D>().AddTorque(Random.Range((maxPyoriminen * 0.5f), maxPyoriminen));
+
+        }
 
     }
+
 
     // Start is called before the first frame update
     void Start()
